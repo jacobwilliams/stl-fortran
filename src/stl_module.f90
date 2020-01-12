@@ -2,6 +2,12 @@
 !>
 !  STL (STereoLithography) file library.
 !
+!### Author
+!  * Jacob Williams, Jan 12, 2020.
+!
+!### License
+!  * BSD-3
+!
 !### Reference
 !  * https://en.wikipedia.org/wiki/STL_(file_format)
 

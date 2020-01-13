@@ -20,6 +20,10 @@
 
     private
 
+    ! constants:
+    real(wp),parameter :: zero = 0.0_wp
+    real(wp),parameter :: one  = 1.0_wp
+
     type,public :: plate
         !! a 3D triangular plate.
         !! [note that the order of the vertices defines the
@@ -173,10 +177,10 @@
     real(wp) :: max_value !! largest absolute value of any vertex coordinate
     integer :: i !! counter
 
-    scale = 1.0_wp
+    scale = one
     if (present(bounding_box)) then
-        if (bounding_box>0.0_wp) then
-            max_value = -huge(1.0_wp)
+        if (bounding_box>zero) then
+            max_value = -huge(one)
             do i = 1, size(plates)
                 max_value = max(max_value, maxval(abs(plates(i)%v1)),&
                                            maxval(abs(plates(i)%v2)),&
@@ -200,31 +204,32 @@
     type(plate),dimension(:),intent(inout) :: plates !! array of triangular plates
 
     integer :: i !! counter
+    integer :: j !! counter
     real(wp),dimension(3) :: offset !! offset vector for vertext coordinates [x,y,z]
     real(wp),dimension(3) :: mins   !! min values of vertex coordinates [x,y,z]
 
     real(wp),parameter :: tiny = 1.0e-4_wp !! small value to avoid zero
 
     ! first find the min value of each coordinate:
-    mins = huge(1.0_wp)
+    mins = huge(one)
     do i = 1, size(plates)
-        mins(1) = min(mins(1), plates(i)%v1(1), plates(i)%v2(1), plates(i)%v3(1) )
-        mins(2) = min(mins(2), plates(i)%v1(2), plates(i)%v2(2), plates(i)%v3(2) )
-        mins(3) = min(mins(3), plates(i)%v1(3), plates(i)%v2(3), plates(i)%v3(3) )
+        do concurrent (j = 1:3)
+            mins(j) = min(mins(j), plates(i)%v1(j), plates(i)%v2(j), plates(i)%v3(j) )
+        end do
     end do
 
     ! compute the offset vector:
-    offset = 0.0_wp
-    if (mins(1) <= 0.0_wp) offset(1) = abs(mins(1)) + tiny
-    if (mins(2) <= 0.0_wp) offset(2) = abs(mins(2)) + tiny
-    if (mins(3) <= 0.0_wp) offset(3) = abs(mins(3)) + tiny
+    offset = zero
+    do concurrent (j = 1:3)
+        if (mins(j) <= zero) offset(j) = abs(mins(j)) + tiny
+    end do
 
-    if (any(offset/=0.0_wp)) then
+    if (any(offset/=zero)) then
         ! now add offset vector to each
         do i = 1, size(plates)
-            plates(i)%v1 = plates(i)%v1 + offset(1)
-            plates(i)%v2 = plates(i)%v2 + offset(2)
-            plates(i)%v3 = plates(i)%v3 + offset(3)
+            plates(i)%v1 = plates(i)%v1 + offset
+            plates(i)%v2 = plates(i)%v2 + offset
+            plates(i)%v3 = plates(i)%v3 + offset
         end do
     end if
 
@@ -264,10 +269,10 @@
 
     rmag = norm2(r)
 
-    if (rmag/=0.0_wp) then
+    if (rmag/=zero) then
         rhat = r/rmag
     else
-        rhat = 0.0_wp
+        rhat = zero
     end if
 
     end function unit

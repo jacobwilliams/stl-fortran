@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# directories:
+/bin
+/lib
+/doc
+
+# stl files:
+*.stl

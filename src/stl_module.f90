@@ -104,7 +104,7 @@
 
         if (me%n_plates == n) then
             ! have to add another chunk
-            allocate(tmp(n+1))
+            allocate(tmp(n+me%chunk_size))
             tmp(1:n) = me%plates
             tmp(n+1)%v1 = v1
             tmp(n+1)%v2 = v2

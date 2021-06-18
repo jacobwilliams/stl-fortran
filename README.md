@@ -1,6 +1,6 @@
 ### Description
 
-Just some Fortran code for dealing with STL (STereoLithography) files. Totally untested at this point.
+Fortran code for generating STL (STereoLithography) files.
 
 ### Reference
 

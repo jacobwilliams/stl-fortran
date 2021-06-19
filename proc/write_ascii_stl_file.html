@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 7.1% of total for procedures.">28 statements</a>
+    title=" 6.6% of total for procedures.">28 statements</a>
      </li> 
      
      
@@ -346,33 +346,33 @@ private subroutine write_ascii_stl_file(me, filename, modelname, istat, bounding
 <path fill="none" stroke="#000000" d="M107.06,-33C115.72,-33 124.53,-33 132.69,-33"/>
 <polygon fill="#000000" stroke="#000000" points="132.96,-36.5 142.96,-33 132.96,-29.5 132.96,-36.5"/>
 </g>
-<!-- proc~unit -->
-<g id="proc~~write_ascii_stl_file~~CallsGraph_node3" class="node">
-<title>proc~unit</title>
-<g id="a_proc~~write_ascii_stl_file~~CallsGraph_node3"><a xlink:href=".././proc/unit.html" xlink:title="unit">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="287,-66 233,-66 233,-42 287,-42 287,-66"/>
-<text text-anchor="middle" x="260" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">unit</text>
-</a>
-</g>
-</g>
-<!-- proc~normal&#45;&gt;proc~unit -->
-<g id="proc~~write_ascii_stl_file~~CallsGraph_edge2" class="edge">
-<title>proc~normal&#45;&gt;proc~unit</title>
-<path fill="none" stroke="#000000" d="M197.4,-39.3C205.48,-41.23 214.51,-43.38 223.1,-45.43"/>
-<polygon fill="#000000" stroke="#000000" points="222.38,-48.86 232.92,-47.78 224,-42.05 222.38,-48.86"/>
-</g>
 <!-- proc~cross -->
-<g id="proc~~write_ascii_stl_file~~CallsGraph_node4" class="node">
+<g id="proc~~write_ascii_stl_file~~CallsGraph_node3" class="node">
 <title>proc~cross</title>
-<g id="a_proc~~write_ascii_stl_file~~CallsGraph_node4"><a xlink:href=".././proc/cross.html" xlink:title="cross">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="287,-24 233,-24 233,0 287,0 287,-24"/>
-<text text-anchor="middle" x="260" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cross</text>
+<g id="a_proc~~write_ascii_stl_file~~CallsGraph_node3"><a xlink:href=".././proc/cross.html" xlink:title="cross">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="287,-66 233,-66 233,-42 287,-42 287,-66"/>
+<text text-anchor="middle" x="260" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cross</text>
 </a>
 </g>
 </g>
 <!-- proc~normal&#45;&gt;proc~cross -->
-<g id="proc~~write_ascii_stl_file~~CallsGraph_edge3" class="edge">
+<g id="proc~~write_ascii_stl_file~~CallsGraph_edge2" class="edge">
 <title>proc~normal&#45;&gt;proc~cross</title>
+<path fill="none" stroke="#000000" d="M197.4,-39.3C205.48,-41.23 214.51,-43.38 223.1,-45.43"/>
+<polygon fill="#000000" stroke="#000000" points="222.38,-48.86 232.92,-47.78 224,-42.05 222.38,-48.86"/>
+</g>
+<!-- proc~unit -->
+<g id="proc~~write_ascii_stl_file~~CallsGraph_node4" class="node">
+<title>proc~unit</title>
+<g id="a_proc~~write_ascii_stl_file~~CallsGraph_node4"><a xlink:href=".././proc/unit.html" xlink:title="unit">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="287,-24 233,-24 233,0 287,0 287,-24"/>
+<text text-anchor="middle" x="260" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">unit</text>
+</a>
+</g>
+</g>
+<!-- proc~normal&#45;&gt;proc~unit -->
+<g id="proc~~write_ascii_stl_file~~CallsGraph_edge3" class="edge">
+<title>proc~normal&#45;&gt;proc~unit</title>
 <path fill="none" stroke="#000000" d="M197.4,-26.7C205.48,-24.77 214.51,-22.62 223.1,-20.57"/>
 <polygon fill="#000000" stroke="#000000" points="224,-23.95 232.92,-18.22 222.38,-17.14 224,-23.95"/>
 </g>
@@ -511,9 +511,9 @@ private subroutine write_ascii_stl_file(me, filename, modelname, istat, bounding
     <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span>  <span class="kd">::</span> <span class="n">bounding_box</span>  <span class="c">!! scale vertices so that model fits in a</span>
                                                    <span class="c">!! box of this size (if &lt;=0, no scaling is done)</span>
 
-    <span class="kt">integer</span>  <span class="kd">::</span> <span class="n">iunit</span>       <span class="c">!! file unit number</span>
-    <span class="kt">integer</span>  <span class="kd">::</span> <span class="n">i</span>           <span class="c">!! counter</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">scale</span>       <span class="c">!! scale factor</span>
+    <span class="kt">integer</span>  <span class="kd">::</span> <span class="n">iunit</span>  <span class="c">!! file unit number</span>
+    <span class="kt">integer</span>  <span class="kd">::</span> <span class="n">i</span>      <span class="c">!! counter</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">scale</span>  <span class="c">!! scale factor</span>
 
     <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">parameter</span> <span class="kd">::</span> <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;(A,1X,E30.16,1X,E30.16,1X,E30.16)&#39;</span> <span class="c">!! format statement for vectors</span>
 

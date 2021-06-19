@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="10.7% of total for procedures.">42 statements</a>
+    title=" 9.9% of total for procedures.">42 statements</a>
      </li> 
      
      
@@ -373,7 +373,8 @@ private subroutine add_cylinder(me, v1, v2, radius, num_points, initial_cap, fin
   <td>optional</td>
   
   <td>dimension(3)</td><td>::</td>
-  <td><strong>final_normal_used</strong></td><td><p>outward normal vector for final circle actually used</p></td>
+  <td><strong>final_normal_used</strong></td><td><p>outward normal vector for final circle
+ actually used</p></td>
   
 </tr>
 
@@ -388,7 +389,8 @@ private subroutine add_cylinder(me, v1, v2, radius, num_points, initial_cap, fin
   <td>optional</td>
   
   <td>dimension(3)</td><td>::</td>
-  <td><strong>initial_vector</strong></td><td><p>vector to use to generate the initial circle (x_unit by default)</p></td>
+  <td><strong>initial_vector</strong></td><td><p>vector to use to generate the initial
+ circle (x_unit by default)</p></td>
   
 </tr>
 
@@ -403,7 +405,8 @@ private subroutine add_cylinder(me, v1, v2, radius, num_points, initial_cap, fin
   <td>optional</td>
   
   <td>dimension(3)</td><td>::</td>
-  <td><strong>final_initial_vector_used</strong></td><td><p>the initial vector used for the final cap to generate the points</p></td>
+  <td><strong>final_initial_vector_used</strong></td><td><p>the initial vector used for the final
+ cap to generate the points</p></td>
   
 </tr>
 
@@ -582,18 +585,21 @@ private subroutine add_cylinder(me, v1, v2, radius, num_points, initial_cap, fin
 
     <span class="k">implicit none</span>
 
-<span class="k">    class</span><span class="p">(</span><span class="n">stl_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>             <span class="kd">::</span> <span class="n">me</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>          <span class="kd">::</span> <span class="n">v1</span>             <span class="c">!! coordinates of initial point</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>          <span class="kd">::</span> <span class="n">v2</span>             <span class="c">!! coordinates of final point</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>                       <span class="kd">::</span> <span class="n">radius</span>         <span class="c">!! radius of the cylinder</span>
-    <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>                        <span class="kd">::</span> <span class="n">num_points</span>     <span class="c">!! number of point on the circle (&gt;=3)</span>
-    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>                        <span class="kd">::</span> <span class="n">initial_cap</span>    <span class="c">!! add a cap plate to the initial point</span>
-    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>                        <span class="kd">::</span> <span class="n">final_cap</span>      <span class="c">!! add a cap plate to the final point</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">initial_normal</span> <span class="c">!! outward normal vector for initial circle</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">final_normal</span>   <span class="c">!! outward normal vector for final circle</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">final_normal_used</span>   <span class="c">!! outward normal vector for final circle actually used</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span>  <span class="kd">::</span> <span class="n">initial_vector</span> <span class="c">!! vector to use to generate the initial circle (x_unit by default)</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">final_initial_vector_used</span>   <span class="c">!! the initial vector used for the final cap to generate the points</span>
+<span class="k">    class</span><span class="p">(</span><span class="n">stl_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">me</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">v1</span>                        <span class="c">!! coordinates of initial point</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">v2</span>                        <span class="c">!! coordinates of final point</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>                        <span class="kd">::</span> <span class="n">radius</span>                    <span class="c">!! radius of the cylinder</span>
+    <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>                         <span class="kd">::</span> <span class="n">num_points</span>                <span class="c">!! number of point on the circle (&gt;=3)</span>
+    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>                         <span class="kd">::</span> <span class="n">initial_cap</span>               <span class="c">!! add a cap plate to the initial point</span>
+    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>                         <span class="kd">::</span> <span class="n">final_cap</span>                 <span class="c">!! add a cap plate to the final point</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span>  <span class="kd">::</span> <span class="n">initial_normal</span>            <span class="c">!! outward normal vector for initial circle</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span>  <span class="kd">::</span> <span class="n">final_normal</span>              <span class="c">!! outward normal vector for final circle</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">final_normal_used</span>         <span class="c">!! outward normal vector for final circle</span>
+                                                                            <span class="c">!! actually used</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span>  <span class="kd">::</span> <span class="n">initial_vector</span>            <span class="c">!! vector to use to generate the initial</span>
+                                                                            <span class="c">!! circle (x_unit by default)</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">final_initial_vector_used</span> <span class="c">!! the initial vector used for the final</span>
+                                                                            <span class="c">!! cap to generate the points</span>
 
     <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>  <span class="c">!! counter</span>
     <span class="kt">integer</span> <span class="kd">::</span> <span class="n">nc</span> <span class="c">!! number of points on the circle</span>

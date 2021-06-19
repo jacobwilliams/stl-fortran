@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>80.0% of total for derived types.</p>Including implementation: 332 statements, 98.5% of total for derived types.">20 statements</a>
+    title="<p>81.5% of total for derived types.</p>Including implementation: 367 statements, 98.7% of total for derived types.">22 statements</a>
      </li> 
      
      
@@ -217,13 +217,17 @@
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_cone">add_cone</a>
       
-      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-generate_circle">generate_circle</a>
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_arrow">add_arrow</a>
+      
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_axes">add_axes</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-shift_mesh">shift_mesh</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-set_chunk_size">set_chunk_size</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-destroy">destroy</a>
+      
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-generate_circle">generate_circle</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-compute_vertex_scale">compute_vertex_scale</a>
       
@@ -391,13 +395,17 @@
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_cone">add_cone</a>
       
-      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-generate_circle">generate_circle</a>
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_arrow">add_arrow</a>
+      
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_axes">add_axes</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-shift_mesh">shift_mesh</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-set_chunk_size">set_chunk_size</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-destroy">destroy</a>
+      
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-generate_circle">generate_circle</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-compute_vertex_scale">compute_vertex_scale</a>
       
@@ -1178,7 +1186,8 @@ private subroutine <a href='../proc/add_cylinder.html'>add_cylinder</a>(me, v1, 
   <td>optional</td>
   
   <td>dimension(3)</td><td>::</td>
-  <td><strong>final_normal_used</strong></td><td><p>outward normal vector for final circle actually used</p></td>
+  <td><strong>final_normal_used</strong></td><td><p>outward normal vector for final circle
+ actually used</p></td>
   
 </tr>
 
@@ -1193,7 +1202,8 @@ private subroutine <a href='../proc/add_cylinder.html'>add_cylinder</a>(me, v1, 
   <td>optional</td>
   
   <td>dimension(3)</td><td>::</td>
-  <td><strong>initial_vector</strong></td><td><p>vector to use to generate the initial circle (x_unit by default)</p></td>
+  <td><strong>initial_vector</strong></td><td><p>vector to use to generate the initial
+ circle (x_unit by default)</p></td>
   
 </tr>
 
@@ -1208,7 +1218,8 @@ private subroutine <a href='../proc/add_cylinder.html'>add_cylinder</a>(me, v1, 
   <td>optional</td>
   
   <td>dimension(3)</td><td>::</td>
-  <td><strong>final_initial_vector_used</strong></td><td><p>the initial vector used for the final cap to generate the points</p></td>
+  <td><strong>final_initial_vector_used</strong></td><td><p>the initial vector used for the final
+ cap to generate the points</p></td>
   
 </tr>
 
@@ -1613,7 +1624,7 @@ private subroutine <a href='../proc/add_cone.html'>add_cone</a>(me, v1, v2, radi
     
      
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-generate_circle"></span><h3>procedure, public :: <strong>generate_circle</strong>  
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-add_arrow"></span><h3>procedure, public :: <strong>add_arrow</strong>  
     
   </h3></div>
   
@@ -1625,7 +1636,7 @@ private subroutine <a href='../proc/add_cone.html'>add_cone</a>(me, v1, v2, radi
           
     
     <h3>
-private subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me, c, radius, n, nc, add_circle, circle, initial_vector, cw)
+private subroutine <a href='../proc/add_arrow.html'>add_arrow</a>(me, origin, v, radius, num_points, arrowhead_radius_factor, arrowhead_length_factor)
     
     
    
@@ -1638,7 +1649,7 @@ private subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me
 
 
 
-<p>Generate the points in a circle, and optionally add it as a plate.</p>
+<p>Add an arrow to an STL file.</p>
     
     <h4>Arguments</h4>
     
@@ -1679,7 +1690,22 @@ private subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me
   <td></td>
   
   <td>dimension(3)</td><td>::</td>
-  <td><strong>c</strong></td><td><p>center of the circle</p></td>
+  <td><strong>origin</strong></td><td><p>coordinates of the origin of the axes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>v</strong></td><td><p>vector</p></td>
   
 </tr>
 
@@ -1704,12 +1730,191 @@ private subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me
   
 <tr>
   
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>num_points</strong></td><td><p>number of point on the circle (&gt;=3)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>arrowhead_radius_factor</strong></td><td><p>arrowhead cone radius factor
+ (multiple of cylinder radius)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>arrowhead_length_factor</strong></td><td><p>arrowhead tip length factor
+ (multiple of vector length)</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-add_axes"></span><h3>procedure, public :: <strong>add_axes</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+private subroutine <a href='../proc/add_axes.html'>add_axes</a>(me, origin, vx, vy, vz, radius, num_points, arrowhead_radius_factor, arrowhead_length_factor)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Add x,y,z axes to an STL file.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>me</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
   <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in),</td>
   <td></td>
   
   <td>dimension(3)</td><td>::</td>
-  <td><strong>n</strong></td><td><p>normal vector to the circle</p></td>
+  <td><strong>origin</strong></td><td><p>coordinates of the origin of the axes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>vx</strong></td><td><p>x axis vector</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>vy</strong></td><td><p>y axis vector</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>vz</strong></td><td><p>z axis vector</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>radius</strong></td><td><p>radius of the cylinder</p></td>
   
 </tr>
 
@@ -1724,7 +1929,7 @@ private subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>nc</strong></td><td><p>number of points on the circle (must be at least 3)</p></td>
+  <td><strong>num_points</strong></td><td><p>number of point on the circle (&gt;=3)</p></td>
   
 </tr>
 
@@ -1734,12 +1939,13 @@ private subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me
   
 <tr>
   
-  <td><span class="anchor" ></span>logical,</td>
+  <td><span class="anchor" ></span>real(kind=wp),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>add_circle</strong></td><td><p>to also add to the circle as a plate</p></td>
+  <td><strong>arrowhead_radius_factor</strong></td><td><p>arrowhead cone radius factor
+ (multiple of cylinder radius)</p></td>
   
 </tr>
 
@@ -1750,41 +1956,12 @@ private subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me
 <tr>
   
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(out),</td>
+  <td>intent(in)</td>
   <td></td>
   
-  <td>dimension(:,:), allocatable</td><td>::</td>
-  <td><strong>circle</strong></td><td><p>points on the circle</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td>dimension(3)</td><td>::</td>
-  <td><strong>initial_vector</strong></td><td><p>vector to use to generate the initial circle (x_unit by default)</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>logical,</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
   <td></td><td>::</td>
-  <td><strong>cw</strong></td><td><p>generate the points in the clockwise direction abound n (default is false)</p></td>
+  <td><strong>arrowhead_length_factor</strong></td><td><p>arrowhead tip length factor
+ (multiple of vector length)</p></td>
   
 </tr>
 
@@ -2036,6 +2213,201 @@ private subroutine <a href='../proc/destroy_stl_file.html'>destroy_stl_file</a>(
     
      
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-generate_circle"></span><h3>procedure, private :: <strong>generate_circle</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+private subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me, c, radius, n, nc, add_circle, circle, initial_vector, cw)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Generate the points in a circle, and optionally add it as a plate.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>me</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>c</strong></td><td><p>center of the circle</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>radius</strong></td><td><p>radius of the cylinder</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>n</strong></td><td><p>normal vector to the circle</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nc</strong></td><td><p>number of points on the circle
+ (must be at least 3)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>add_circle</strong></td><td><p>to also add to the circle as a plate</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(out),</td>
+  <td></td>
+  
+  <td>dimension(:,:), allocatable</td><td>::</td>
+  <td><strong>circle</strong></td><td><p>points on the circle</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>initial_vector</strong></td><td><p>vector to use to generate the initial
+ circle (x_unit by default)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>cw</strong></td><td><p>generate the points in the clockwise
+ direction abound n (default is false)</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_vertex_scale"></span><h3>procedure, private :: <strong>compute_vertex_scale</strong>  
     
   </h3></div>
@@ -2152,10 +2524,12 @@ private pure function <a href='../proc/compute_vertex_scale.html'>compute_vertex
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_cylinder</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_curve</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_cone</span>
-        <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">generate_circle</span>
+        <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_arrow</span>
+        <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_axes</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">shift_mesh</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">set_chunk_size</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">destroy</span> <span class="o">=&gt;</span> <span class="n">destroy_stl_file</span>
+        <span class="k">procedure</span> <span class="kd">::</span> <span class="n">generate_circle</span>
         <span class="k">procedure</span> <span class="kd">::</span> <span class="n">compute_vertex_scale</span>
     <span class="k">end type </span><span class="n">stl_file</span>
 </pre></div>

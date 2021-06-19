@@ -52,10 +52,12 @@
         procedure,public :: add_cylinder
         procedure,public :: add_curve
         procedure,public :: add_cone
-        procedure,public :: generate_circle
+        procedure,public :: add_arrow
+        procedure,public :: add_axes
         procedure,public :: shift_mesh
         procedure,public :: set_chunk_size
         procedure,public :: destroy => destroy_stl_file
+        procedure :: generate_circle
         procedure :: compute_vertex_scale
     end type stl_file
 
@@ -224,9 +226,9 @@
     real(wp),intent(in),optional  :: bounding_box  !! scale vertices so that model fits in a
                                                    !! box of this size (if <=0, no scaling is done)
 
-    integer  :: iunit       !! file unit number
-    integer  :: i           !! counter
-    real(wp) :: scale       !! scale factor
+    integer  :: iunit  !! file unit number
+    integer  :: i      !! counter
+    real(wp) :: scale  !! scale factor
 
     character(len=*),parameter :: fmt = '(A,1X,E30.16,1X,E30.16,1X,E30.16)' !! format statement for vectors
 
@@ -414,18 +416,21 @@
 
     implicit none
 
-    class(stl_file),intent(inout)             :: me
-    real(wp),dimension(3),intent(in)          :: v1             !! coordinates of initial point
-    real(wp),dimension(3),intent(in)          :: v2             !! coordinates of final point
-    real(wp),intent(in)                       :: radius         !! radius of the cylinder
-    integer,intent(in)                        :: num_points     !! number of point on the circle (>=3)
-    logical,intent(in)                        :: initial_cap    !! add a cap plate to the initial point
-    logical,intent(in)                        :: final_cap      !! add a cap plate to the final point
-    real(wp),dimension(3),intent(in),optional :: initial_normal !! outward normal vector for initial circle
-    real(wp),dimension(3),intent(in),optional :: final_normal   !! outward normal vector for final circle
-    real(wp),dimension(3),intent(out),optional :: final_normal_used   !! outward normal vector for final circle actually used
-    real(wp),dimension(3),intent(in),optional  :: initial_vector !! vector to use to generate the initial circle (x_unit by default)
-    real(wp),dimension(3),intent(out),optional :: final_initial_vector_used   !! the initial vector used for the final cap to generate the points
+    class(stl_file),intent(inout)              :: me
+    real(wp),dimension(3),intent(in)           :: v1                        !! coordinates of initial point
+    real(wp),dimension(3),intent(in)           :: v2                        !! coordinates of final point
+    real(wp),intent(in)                        :: radius                    !! radius of the cylinder
+    integer,intent(in)                         :: num_points                !! number of point on the circle (>=3)
+    logical,intent(in)                         :: initial_cap               !! add a cap plate to the initial point
+    logical,intent(in)                         :: final_cap                 !! add a cap plate to the final point
+    real(wp),dimension(3),intent(in),optional  :: initial_normal            !! outward normal vector for initial circle
+    real(wp),dimension(3),intent(in),optional  :: final_normal              !! outward normal vector for final circle
+    real(wp),dimension(3),intent(out),optional :: final_normal_used         !! outward normal vector for final circle
+                                                                            !! actually used
+    real(wp),dimension(3),intent(in),optional  :: initial_vector            !! vector to use to generate the initial
+                                                                            !! circle (x_unit by default)
+    real(wp),dimension(3),intent(out),optional :: final_initial_vector_used !! the initial vector used for the final
+                                                                            !! cap to generate the points
 
     integer :: i  !! counter
     integer :: nc !! number of points on the circle
@@ -538,25 +543,84 @@
 
 !********************************************************************************
 !>
+!  Add x,y,z axes to an STL file.
+
+    subroutine add_axes(me,origin,vx,vy,vz,radius,num_points,&
+                        arrowhead_radius_factor,arrowhead_length_factor)
+
+    implicit none
+
+    class(stl_file),intent(inout)    :: me
+    real(wp),dimension(3),intent(in) :: origin                  !! coordinates of the origin of the axes
+    real(wp),dimension(3),intent(in) :: vx                      !! x axis vector
+    real(wp),dimension(3),intent(in) :: vy                      !! y axis vector
+    real(wp),dimension(3),intent(in) :: vz                      !! z axis vector
+    real(wp),intent(in)              :: radius                  !! radius of the cylinder
+    integer,intent(in)               :: num_points              !! number of point on the circle (>=3)
+    real(wp),intent(in)              :: arrowhead_radius_factor !! arrowhead cone radius factor
+                                                                !! (multiple of cylinder radius)
+    real(wp),intent(in)              :: arrowhead_length_factor !! arrowhead tip length factor
+                                                                !! (multiple of vector length)
+
+    call me%add_arrow(origin,vx,radius,num_points,arrowhead_radius_factor,arrowhead_length_factor)
+    call me%add_arrow(origin,vy,radius,num_points,arrowhead_radius_factor,arrowhead_length_factor)
+    call me%add_arrow(origin,vz,radius,num_points,arrowhead_radius_factor,arrowhead_length_factor)
+
+    end subroutine add_axes
+!********************************************************************************
+
+!********************************************************************************
+!>
+!  Add an arrow to an STL file.
+
+    subroutine add_arrow(me,origin,v,radius,num_points,&
+                         arrowhead_radius_factor,arrowhead_length_factor)
+
+    implicit none
+
+    class(stl_file),intent(inout)    :: me
+    real(wp),dimension(3),intent(in) :: origin                   !! coordinates of the origin of the axes
+    real(wp),dimension(3),intent(in) :: v                        !! vector
+    real(wp),intent(in)              :: radius                   !! radius of the cylinder
+    integer,intent(in)               :: num_points               !! number of point on the circle (>=3)
+    real(wp),intent(in)              :: arrowhead_radius_factor  !! arrowhead cone radius factor
+                                                                 !! (multiple of cylinder radius)
+    real(wp),intent(in)              :: arrowhead_length_factor  !! arrowhead tip length factor
+                                                                 !! (multiple of vector length)
+
+    call me%add_cylinder(origin,v,radius,num_points,&
+                         initial_cap=.true.,final_cap=.true.)
+    call me%add_cone(v,v+arrowhead_length_factor*v,&
+                     arrowhead_radius_factor*radius,num_points,initial_cap=.true.)
+
+    end subroutine add_arrow
+!********************************************************************************
+
+!********************************************************************************
+!>
 !  Generate the points in a circle, and optionally add it as a plate.
 
     subroutine generate_circle(me,c,radius,n,nc,add_circle,circle,initial_vector,cw)
 
     implicit none
 
-    class(stl_file),intent(inout)       :: me
-    real(wp),dimension(3),intent(in)    :: c           !! center of the circle
-    real(wp),intent(in)                 :: radius      !! radius of the cylinder
-    real(wp),dimension(3),intent(in)    :: n           !! normal vector to the circle
-    integer,intent(in)                  :: nc          !! number of points on the circle (must be at least 3)
-    logical,intent(in)                  :: add_circle  !! to also add to the circle as a plate
-    real(wp),dimension(:,:),allocatable,intent(out) :: circle      !! points on the circle
-    real(wp),dimension(3),intent(in),optional     :: initial_vector !! vector to use to generate the initial circle (x_unit by default)
-    logical,intent(in),optional :: cw !! generate the points in the clockwise direction abound n (default is false)
+    class(stl_file),intent(inout)                   :: me
+    real(wp),dimension(3),intent(in)                :: c              !! center of the circle
+    real(wp),intent(in)                             :: radius         !! radius of the cylinder
+    real(wp),dimension(3),intent(in)                :: n              !! normal vector to the circle
+    integer,intent(in)                              :: nc             !! number of points on the circle
+                                                                      !! (must be at least 3)
+    logical,intent(in)                              :: add_circle     !! to also add to the circle as a plate
+    real(wp),dimension(:,:),allocatable,intent(out) :: circle         !! points on the circle
+    real(wp),dimension(3),intent(in),optional       :: initial_vector !! vector to use to generate the initial
+                                                                      !! circle (x_unit by default)
+    logical,intent(in),optional                     :: cw             !! generate the points in the clockwise
+                                                                      !! direction abound n (default is false)
 
-    real(wp),dimension(3) :: v   !! initial vector for the circle
-    integer :: i !! counter
-    real(wp) :: factor !! cw/ccw factor
+    real(wp),dimension(3) :: v      !! initial vector for the circle
+    integer               :: i      !! counter
+    real(wp)              :: factor !! cw/ccw factor
+    logical               :: compute_initial_vector !! if we need to compute an initial vector
 
     if (nc<3) error stop 'number of points on a circle must be at least 3'
 
@@ -568,20 +632,26 @@
         if (cw) factor = -one
     end if
 
+    if (present(initial_vector)) then
+        compute_initial_vector =  all(initial_vector==zero)
+    else
+        compute_initial_vector = .true.
+    end if
+
     ! start with an initial vector on the circle (perpendicular to n0)
     ! [project x to circle (or y if x is parallel to n)]
-    if (present(initial_vector)) then
+    if (.not. compute_initial_vector) then
         v = unit(vector_projection_on_plane(initial_vector,n))
-        if (.not. perpendicular(v, n)) then
+        if (.not. perpendicular(v, n) .or. all(v==zero)) then
             ! fall back to x or y axis
             v = unit(vector_projection_on_plane(x_unit,n))
-            if (.not. perpendicular(v, n)) then
+            if (.not. perpendicular(v, n) .or. all(v==zero)) then
                 v = unit(vector_projection_on_plane(y_unit,n))
             end if
         end if
     else
         v = unit(vector_projection_on_plane(x_unit,n))
-        if (.not. perpendicular(v, n)) then
+        if (.not. perpendicular(v, n) .or. all(v==zero)) then
             v = unit(vector_projection_on_plane(y_unit,n))
         end if
     end if
@@ -644,11 +714,11 @@
     real(wp),dimension(3),intent(in),optional :: final_normal   !! outward normal vector for final circle
     real(wp),dimension(3),intent(in),optional :: initial_vector !! vector to use to generate the first circle (x_unit by default)
 
-    integer :: i !! counter
-    integer :: n !! number of points
-    real(wp),dimension(3) :: nv !! for intermediate normal vectors
+    integer               :: i      !! counter
+    integer               :: n      !! number of points
+    real(wp),dimension(3) :: nv     !! for intermediate normal vectors
     real(wp),dimension(3) :: nv_tmp !! for intermediate normal vectors
-    real(wp),dimension(3) :: v !! for intermediate initial vectors
+    real(wp),dimension(3) :: v      !! for intermediate initial vectors
 
     n = min(size(x), size(y), size(z))
     if (n<2) error stop 'error: a curve must have more than one point'

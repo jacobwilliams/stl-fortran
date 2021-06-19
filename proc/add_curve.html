@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 7.9% of total for procedures.">31 statements</a>
+    title=" 7.3% of total for procedures.">31 statements</a>
      </li> 
      
      
@@ -231,7 +231,7 @@ private subroutine add_curve(me, x, y, z, radius, num_points, initial_cap, initi
   
 <tr>
   
-  <td><span class="anchor" id="variable-me~12"></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
+  <td><span class="anchor" id="variable-me~14"></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -291,7 +291,7 @@ private subroutine add_curve(me, x, y, z, radius, num_points, initial_cap, initi
   
 <tr>
   
-  <td><span class="anchor" id="variable-radius~5"></span>real(kind=wp),</td>
+  <td><span class="anchor" id="variable-radius~7"></span>real(kind=wp),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -306,7 +306,7 @@ private subroutine add_curve(me, x, y, z, radius, num_points, initial_cap, initi
   
 <tr>
   
-  <td><span class="anchor" id="variable-num_points~3"></span>integer,</td>
+  <td><span class="anchor" id="variable-num_points~5"></span>integer,</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -577,11 +577,11 @@ private subroutine add_curve(me, x, y, z, radius, num_points, initial_cap, initi
     <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">final_normal</span>   <span class="c">!! outward normal vector for final circle</span>
     <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">initial_vector</span> <span class="c">!! vector to use to generate the first circle (x_unit by default)</span>
 
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span> <span class="c">!! counter</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">n</span> <span class="c">!! number of points</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nv</span> <span class="c">!! for intermediate normal vectors</span>
+    <span class="kt">integer</span>               <span class="kd">::</span> <span class="n">i</span>      <span class="c">!! counter</span>
+    <span class="kt">integer</span>               <span class="kd">::</span> <span class="n">n</span>      <span class="c">!! number of points</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nv</span>     <span class="c">!! for intermediate normal vectors</span>
     <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">nv_tmp</span> <span class="c">!! for intermediate normal vectors</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">v</span> <span class="c">!! for intermediate initial vectors</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">v</span>      <span class="c">!! for intermediate initial vectors</span>
 
     <span class="n">n</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">size</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">size</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">)</span> <span class="k">error stop</span> <span class="s1">&#39;error: a curve must have more than one point&#39;</span>

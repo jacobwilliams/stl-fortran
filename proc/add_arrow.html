@@ -10,7 +10,7 @@
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
-    <title>set_chunk_size &ndash; stl-fortran</title>
+    <title>add_arrow &ndash; stl-fortran</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -108,7 +108,7 @@
     
   
   <div class="row">
-    <h1>set_chunk_size
+    <h1>add_arrow
       <small>Subroutine</small>
     
     </h1>
@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.2% of total for procedures.">5 statements</a>
+    title=" 2.8% of total for procedures.">12 statements</a>
      </li> 
      
      
@@ -143,7 +143,7 @@
      <li><a href='../module/stl_module.html'>stl_module</a></li>
     
   
-     <li class="active">set_chunk_size</li>
+     <li class="active">add_arrow</li>
   </ol>
 </div>
 </div>
@@ -187,7 +187,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/set_chunk_size.html#src">set_chunk_size</a>
+    <a class="list-group-item" href="../proc/add_arrow.html#src">add_arrow</a>
   </div>
 </div>
 
@@ -199,7 +199,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine set_chunk_size(me, chunk_size)
+private subroutine add_arrow(me, origin, v, radius, num_points, arrowhead_radius_factor, arrowhead_length_factor)
     
     
    
@@ -209,7 +209,7 @@ private subroutine set_chunk_size(me, chunk_size)
 
 
     
-    <p>Set the chunk size in the class.</p>
+    <p>Add an arrow to an STL file.</p>
     
 
     <h3>Arguments</h3>
@@ -230,7 +230,7 @@ private subroutine set_chunk_size(me, chunk_size)
   
 <tr>
   
-  <td><span class="anchor" id="variable-me~3"></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
+  <td><span class="anchor" id="variable-me~12"></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -245,12 +245,89 @@ private subroutine set_chunk_size(me, chunk_size)
   
 <tr>
   
-  <td><span class="anchor" id="variable-chunk_size~2"></span>integer,</td>
+  <td><span class="anchor" id="variable-origin~2"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>origin</strong></td><td><p>coordinates of the origin of the axes</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-v~2"></span>real(kind=wp),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(3)</td><td>::</td>
+  <td><strong>v</strong></td><td><p>vector</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-radius~5"></span>real(kind=wp),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>chunk_size</strong></td><td><p>must be &gt;0</p></td>
+  <td><strong>radius</strong></td><td><p>radius of the cylinder</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-num_points~4"></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>num_points</strong></td><td><p>number of point on the circle (&gt;=3)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-arrowhead_radius_factor~2"></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>arrowhead_radius_factor</strong></td><td><p>arrowhead cone radius factor
+ (multiple of cylinder radius)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-arrowhead_length_factor~2"></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>arrowhead_length_factor</strong></td><td><p>arrowhead tip length factor
+ (multiple of vector length)</p></td>
   
 </tr>
 
@@ -292,7 +369,7 @@ private subroutine set_chunk_size(me, chunk_size)
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/set_chunk_size.html#src">set_chunk_size</a>
+    <a class="list-group-item" href="../proc/add_arrow.html#src">add_arrow</a>
   </div>
 </div>
 
@@ -321,14 +398,27 @@ private subroutine set_chunk_size(me, chunk_size)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">set_chunk_size</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">chunk_size</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">add_arrow</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">origin</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">num_points</span><span class="p">,&amp;</span>
+                         <span class="n">arrowhead_radius_factor</span><span class="p">,</span><span class="n">arrowhead_length_factor</span><span class="p">)</span>
 
-    <span class="k">class</span><span class="p">(</span><span class="n">stl_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">me</span>
-    <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>            <span class="kd">::</span> <span class="n">chunk_size</span> <span class="c">!! must be &gt;0</span>
+    <span class="k">implicit none</span>
 
-    <span class="n">me</span><span class="p">%</span><span class="n">chunk_size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">chunk_size</span><span class="p">)</span>
+<span class="k">    class</span><span class="p">(</span><span class="n">stl_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">me</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">origin</span>                   <span class="c">!! coordinates of the origin of the axes</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">v</span>                        <span class="c">!! vector</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">radius</span>                   <span class="c">!! radius of the cylinder</span>
+    <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>               <span class="kd">::</span> <span class="n">num_points</span>               <span class="c">!! number of point on the circle (&gt;=3)</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">arrowhead_radius_factor</span>  <span class="c">!! arrowhead cone radius factor</span>
+                                                                 <span class="c">!! (multiple of cylinder radius)</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">arrowhead_length_factor</span>  <span class="c">!! arrowhead tip length factor</span>
+                                                                 <span class="c">!! (multiple of vector length)</span>
 
-    <span class="k">end subroutine </span><span class="n">set_chunk_size</span>
+    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">add_cylinder</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">num_points</span><span class="p">,&amp;</span>
+                         <span class="n">initial_cap</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="n">final_cap</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
+    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">add_cone</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">v</span><span class="o">+</span><span class="n">arrowhead_length_factor</span><span class="o">*</span><span class="n">v</span><span class="p">,&amp;</span>
+                     <span class="n">arrowhead_radius_factor</span><span class="o">*</span><span class="n">radius</span><span class="p">,</span><span class="n">num_points</span><span class="p">,</span><span class="n">initial_cap</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
+
+    <span class="k">end subroutine </span><span class="n">add_arrow</span>
 </pre></div>
 
     </section>

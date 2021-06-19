@@ -12,6 +12,10 @@
     type(stl_file) :: model
     integer :: istat !! status return code
     integer :: i !! counter
+    integer :: j !! counter
+    real(wp),dimension(:),allocatable :: x,y,z !! curve coordinates
+
+    real(wp),parameter :: deg2rad = acos(-1.0_wp) / 180.0_wp !! degrees to radians
 
     ! add some spheres:
     call model%add_sphere([0.0_wp, 0.0_wp, 0.0_wp], 1.0_wp, 20, 40)
@@ -52,6 +56,26 @@
                          num_points = 10, &
                          initial_cap=.true.,final_cap=.true.)
     call model%write_binary_stl_file('curve.stl',istat)
+    write(*,*) istat
+    call model%destroy()
+
+    ! curves:
+    allocate(x(360))
+    allocate(y(360))
+    allocate(z(360)); z = 0.0_wp
+    do j = 1, 5
+        do i = 1, 360
+            x(i) = j*2.0_wp * cos(i*deg2rad) * sin(i/2.0_wp*deg2rad)
+            y(i) = j*2.0_wp * sin(i*deg2rad) * sin(i/2.0_wp*deg2rad)
+        end do
+        call model%add_curve(x = x, &
+                             y = y, &
+                             z = z, &
+                             radius = 0.1_wp,&
+                             num_points = 10, &
+                             initial_cap=.true.,final_cap=.true.)
+    end do
+    call model%write_binary_stl_file('curve2.stl',istat)
     write(*,*) istat
     call model%destroy()
 

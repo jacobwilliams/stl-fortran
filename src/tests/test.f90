@@ -55,6 +55,20 @@
     write(*,*) istat
     call model%destroy()
 
+    ! cone:
+    call model%add_cone([0.0_wp,0.0_wp,0.0_wp],&
+                        [0.0_wp,0.0_wp,1.0_wp],&
+                        radius = 0.5_wp,&
+                        num_points= 20, &
+                        initial_cap = .true. )
+    call model%add_cone([0.0_wp,0.0_wp,2.0_wp],&
+                        [0.0_wp,0.0_wp,1.0_wp],&
+                        radius = 0.5_wp,&
+                        num_points= 20, &
+                        initial_cap = .true. )
+    call model%write_binary_stl_file('cones.stl',istat)
+    write(*,*) istat
+    call model%destroy()
 
     end program main
 !********************************************************************************

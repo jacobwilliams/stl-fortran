@@ -51,6 +51,7 @@
         procedure,public :: add_sphere
         procedure,public :: add_cylinder
         procedure,public :: add_curve
+        procedure,public :: add_cone
         procedure,public :: generate_circle
         procedure,public :: shift_mesh
         procedure,public :: set_chunk_size
@@ -482,6 +483,57 @@
    call me%add_plate(n0_cap_points(:,nc),nf_cap_points(:,1),nf_cap_points(:,nc))
 
     end subroutine add_cylinder
+!********************************************************************************
+
+!********************************************************************************
+!>
+!  Add a cone to an STL file.
+!
+!  The cylinder is specified by the initial and final x,y,z coordinates. Optionally,
+!  an initial and final normal vector can be specified (if not specified,
+!  then a default one is constructed).
+
+    subroutine add_cone(me,v1,v2,radius,num_points,initial_cap,initial_normal)
+
+    implicit none
+
+    class(stl_file),intent(inout)             :: me
+    real(wp),dimension(3),intent(in)          :: v1             !! coordinates of initial point (bottom of the cone)
+    real(wp),dimension(3),intent(in)          :: v2             !! coordinates of final point (point of the cone)
+    real(wp),intent(in)                       :: radius         !! radius of the cone (the bottom plate)
+    integer,intent(in)                        :: num_points     !! number of point on the circle (>=3)
+    logical,intent(in)                        :: initial_cap    !! add a cap plate to the initial point (bottom)
+    real(wp),dimension(3),intent(in),optional :: initial_normal !! outward normal vector for initial plate (bottom)
+
+    integer :: i  !! counter
+    integer :: nc !! number of points on the circle
+    real(wp),dimension(3) :: n0 !! normal vector for initial circle
+    real(wp),dimension(:,:),allocatable :: n0_cap_points !! points for the initial cap
+
+    nc = max(3, num_points)
+
+    ! compute the end unit vector:
+    if (present(initial_normal)) then
+        n0 = unit(initial_normal)
+    else
+        n0 = unit(v1-v2)
+    end if
+
+    ! create the points on the initial cap (optionally add the plate)
+    call me%generate_circle(v1,radius,n0,nc,initial_cap,n0_cap_points)
+
+    ! draw the cone plates
+    !      *     v2
+    !     / \
+    !    /   \
+    !   1--*--2  v1
+    do i = 1, nc-1
+        call me%add_plate(n0_cap_points(:,i),n0_cap_points(:,i+1),v2)
+    end do
+    ! last one:
+    call me%add_plate(n0_cap_points(:,nc),n0_cap_points(:,1),v2)
+
+    end subroutine add_cone
 !********************************************************************************
 
 !********************************************************************************

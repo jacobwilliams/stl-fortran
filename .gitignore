@@ -38,3 +38,6 @@
 
 # stl files:
 *.stl
+
+# Mac:
+.DS_Store

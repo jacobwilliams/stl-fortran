@@ -17,12 +17,14 @@
 
     real(wp),parameter :: deg2rad = acos(-1.0_wp) / 180.0_wp !! degrees to radians
 
+    write(*,*) 'Running tests...'
+
     ! add some spheres:
     call model%add_sphere([0.0_wp, 0.0_wp, 0.0_wp], 1.0_wp, 20, 40)
     call model%add_sphere([0.0_wp, 2.0_wp, 0.0_wp], 0.3_wp, 20, 40)
     call model%add_sphere([0.0_wp, 0.0_wp, 2.0_wp], 0.1_wp, 20, 40)
     call model%write_binary_stl_file('spheres.stl',istat)
-    write(*,*) istat
+    if (istat/=0) error stop 'error creating spheres'
     call model%destroy()
 
     ! spheres with different resolutions:
@@ -30,7 +32,7 @@
         call model%add_sphere([real(i,wp), 0.0_wp, 0.0_wp], 0.5_wp, i, i*2)
     end do
     call model%write_binary_stl_file('spheres2.stl',istat)
-    write(*,*) istat
+    if (istat/=0) error stop 'error creating spheres'
     call model%destroy()
 
     ! cylinders:
@@ -45,7 +47,7 @@
                             [3.0_wp,3.0_wp,3.0_wp],&
                              0.2_wp,10,initial_cap=.true.,final_cap=.true.)
     call model%write_binary_stl_file('cylinders.stl',istat)
-    write(*,*) istat
+    if (istat/=0) error stop 'error creating cylinders'
     call model%destroy()
 
     ! curves:
@@ -56,7 +58,7 @@
                          num_points = 10, &
                          initial_cap=.true.,final_cap=.true.)
     call model%write_binary_stl_file('curve.stl',istat)
-    write(*,*) istat
+    if (istat/=0) error stop 'error creating curve'
     call model%destroy()
 
     ! curves:
@@ -75,8 +77,17 @@
                              num_points = 10, &
                              initial_cap=.true.,final_cap=.true.)
     end do
+    call model%add_axes(origin = [0.0_wp,0.0_wp,0.0_wp],&
+                        vx = [4.0_wp,0.0_wp,0.0_wp],&
+                        vy = [0.0_wp,1.0_wp,0.0_wp],&
+                        vz = [0.0_wp,0.0_wp,1.0_wp],&
+                        radius = 0.1_wp,&
+                        num_points = 10,&
+                        arrowhead_radius_factor = 2.0_wp,&
+                        arrowhead_length_factor = 0.2_wp)
+    call model%add_sphere([0.0_wp, 0.0_wp, 0.0_wp], 0.1_wp, 20, 40)
     call model%write_binary_stl_file('curve2.stl',istat)
-    write(*,*) istat
+    if (istat/=0) error stop 'error creating curves'
     call model%destroy()
 
     ! cone:
@@ -91,8 +102,18 @@
                         num_points= 20, &
                         initial_cap = .true. )
     call model%write_binary_stl_file('cones.stl',istat)
-    write(*,*) istat
+    if (istat/=0) error stop 'error creating cones'
     call model%destroy()
+
+    ! ! cylinders:
+    ! call model%add_cylinder([0.0_wp,0.0_wp,0.0_wp],&
+    !                         [1.0_wp,0.0_wp,0.0_wp],&
+    !                          0.5_wp,10,initial_cap=.true.,final_cap=.true.)
+    ! call model%write_binary_stl_file('x.stl',istat)
+    ! if (istat/=0) error stop 'error creating x cylinder'
+    ! call model%destroy()
+
+    write(*,*) 'Done.'
 
     end program main
 !********************************************************************************

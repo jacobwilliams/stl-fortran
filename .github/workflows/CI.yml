@@ -48,7 +48,7 @@ jobs:
     - name: Compile
       run: |
         mkdir bin
-        gfortran ./src/stl_module.f90 ./src/tests/tests.f90 -o ./bin/test
+        gfortran ./src/stl_module.f90 ./src/tests/test.f90 -o ./bin/test
 
     - name: Run tests
       run: |

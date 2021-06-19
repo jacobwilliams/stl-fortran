@@ -455,29 +455,14 @@
     end if
     if (present(final_normal_used)) final_normal_used = nf ! return if necessary
 
-    ! write(*,*) 'n0 = ', n0
-    ! write(*,*) 'nf = ', nf
-
     ! create the points on the initial cap (optionally add the plate)
     call me%generate_circle(v1,radius,n0,nc,initial_cap,n0_cap_points,initial_vector=initial_vector)
-
-    ! !write(*,*) 'n0_cap_points =', n0_cap_points
-    ! write(*,*) 'use initial vector for final plate:'
-    ! write(*,*) 'n0_cap_points(:,1)          = ', n0_cap_points(:,1)
-    ! write(*,*) 'v1                          = ', v1
-    ! write(*,*) 'unit(n0_cap_points(:,1)-v1) = ', unit(n0_cap_points(:,1)-v1)
-    ! write(*,*) 'nf                          = ', nf
-
 
     ! create the points on the final cap (optionally add the plate)
     ! [use the same initial vector to sure that the plate will form a good cylinder]
     call me%generate_circle(v2,radius,nf,nc,final_cap,nf_cap_points,&
-                            initial_vector=unit(n0_cap_points(:,1)-v1),cw=.true.)      ! ... something not right here ...
-    if (present(final_initial_vector_used)) final_initial_vector_used = unit(nf_cap_points(:,1)-v2)  ! ....
-
-    !return  ! for debugging  JUST THE CAPS ........
-
-    !write(*,*) 'nf_cap_points =', nf_cap_points
+                            initial_vector=unit(n0_cap_points(:,1)-v1),cw=.true.)
+    if (present(final_initial_vector_used)) final_initial_vector_used = unit(nf_cap_points(:,1)-v2)
 
     ! now connect the points to form the cylinder:
     !   1----2  nf
@@ -518,11 +503,8 @@
     logical,intent(in),optional :: cw !! generate the points in the clockwise direction abound n (default is false)
 
     real(wp),dimension(3) :: v   !! initial vector for the circle
-    !real(wp),dimension(3) :: iv  !! unit of v
     integer :: i !! counter
     real(wp) :: factor !! cw/ccw factor
-
-    !write(*,*) 'generate_circle.....'
 
     if (nc<3) error stop 'number of points on a circle must be at least 3'
 
@@ -538,16 +520,18 @@
     ! [project x to circle (or y if x is parallel to n)]
     if (present(initial_vector)) then
         v = unit(vector_projection_on_plane(initial_vector,n))
-        if (all(v == unit(initial_vector))) then
+        if (.not. perpendicular(v, n)) then
             ! fall back to x or y axis
             v = unit(vector_projection_on_plane(x_unit,n))
-            if (all(v == x_unit)) then
+            if (.not. perpendicular(v, n)) then
                 v = unit(vector_projection_on_plane(y_unit,n))
             end if
         end if
     else
         v = unit(vector_projection_on_plane(x_unit,n))
-        if (all(v == x_unit)) v = unit(vector_projection_on_plane(y_unit,n))
+        if (.not. perpendicular(v, n)) then
+            v = unit(vector_projection_on_plane(y_unit,n))
+        end if
     end if
     v = radius * unit(v)
 
@@ -563,10 +547,26 @@
     ! final plate that connects last to first
     if (add_circle) call me%add_plate(c,circle(:,1),circle(:,nc))
 
-    !write(*,*) 'c      = ', c
-    !write(*,*) 'circle = ', circle
-
     end subroutine generate_circle
+!********************************************************************************
+
+!********************************************************************************
+!>
+!  Returns true if the two vectors are perpendicular.
+
+    pure function perpendicular(v1, v2) result(is_parallel)
+
+    implicit none
+
+    real(wp),dimension(:),intent(in) :: v1
+    real(wp),dimension(:),intent(in) :: v2
+    logical :: is_parallel
+
+    real(wp),parameter :: tol = 10.0_wp * epsilon(1.0_wp) !! tolerance
+
+    is_parallel = abs(dot_product(unit(v1), unit(v2))) <= tol
+
+    end function perpendicular
 !********************************************************************************
 
 !********************************************************************************
@@ -610,14 +610,14 @@
 
     if (n>3) then
         ! intermediate cylinders (the initial normal is the final normal from the previous cylinder)
-        do i = 2, n-1
+        do i = 2, n-2
             call me%add_cylinder([x(i),y(i),z(i)],&
                                  [x(i+1),y(i+1),z(i+1)],&
                                  radius,num_points,&
-                                 initial_cap=.false.,initial_normal=nv,&
+                                 initial_cap=.false.,initial_normal=-nv,&
                                  final_cap=.false.,final_normal_used=nv_tmp,&
                                  initial_vector=v)
-            nv = nv_tmp
+            nv = unit(nv_tmp)
         end do
     end if
 
@@ -627,7 +627,7 @@
                              [x(n),y(n),z(n)],&
                              radius,num_points,&
                              final_cap=final_cap,final_normal=final_normal,&
-                             initial_normal=nv,initial_cap=.false.,&
+                             initial_normal=-nv,initial_cap=.false.,&
                              initial_vector=v)
     end if
 
@@ -745,15 +745,16 @@
     end function axis_angle_rotation
 !********************************************************************************
 
-
-!*****************************************************************************************
-!> author: Jacob Williams
-!  date: 7/21/2014
-!
+!********************************************************************************
+!>
 !  The projection of one vector onto another vector.
 !
-!# Reference
+!### Reference
 !   * [Wikipedia](http://en.wikipedia.org/wiki/Gram-Schmidt_process)
+!
+!### History
+!  * Jacob Williams : 7/21/2014
+!  * JW : fixed a typo : 6/18/2021
 
     pure function vector_projection(a,b) result(c)
 
@@ -763,38 +764,38 @@
     real(wp),dimension(size(a)),intent(in) :: b  !! the vector to project on to
     real(wp),dimension(size(a))            :: c  !! the projection of a onto b
 
-    real(wp) :: amag2
+    real(wp) :: bmag2
 
-    amag2 = dot_product(a,a)
+    bmag2 = dot_product(b,b)
 
-    if (amag2==zero) then
+    if (bmag2==zero) then
         c = zero
     else
-        c = a * dot_product(a,b) / amag2
+        c = b * dot_product(a,b) / bmag2
     end if
 
     end function vector_projection
-!*****************************************************************************************
+!********************************************************************************
 
-!*****************************************************************************************
+!********************************************************************************
 !>
 !  Project a vector onto a plane.
 !
-!# Reference
+!### Reference
 !   * [Projection of a Vector onto a Plane](http://www.maplesoft.com/support/help/Maple/view.aspx?path=MathApps/ProjectionOfVectorOntoPlane)
 
-    pure function vector_projection_on_plane(v,n) result(p)
+    pure function vector_projection_on_plane(a,b) result(c)
 
     implicit none
 
-    real(wp),dimension(3),intent(in) :: v !! the original vector
-    real(wp),dimension(3),intent(in) :: n !! the plane to project on to (a normal vector)
-    real(wp),dimension(3)            :: p !! the projection of v onto the n plane
+    real(wp),dimension(3),intent(in)  :: a !! the original vector
+    real(wp),dimension(3),intent(in)  :: b !! the plane to project on to (a normal vector)
+    real(wp),dimension(3) :: c !! the projection of a onto the b plane
 
-    p = v - vector_projection(v,n)
+    c = a - vector_projection(a,b)
 
     end function vector_projection_on_plane
-!*****************************************************************************************
+!********************************************************************************
 
 !********************************************************************************
     end module stl_module

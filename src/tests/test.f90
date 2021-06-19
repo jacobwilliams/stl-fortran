@@ -10,9 +10,8 @@
     implicit none
 
     type(stl_file) :: model
-    integer :: istat
-    integer :: i
-    real(wp),dimension(3) :: x,y,z
+    integer :: istat !! status return code
+    integer :: i !! counter
 
     ! add some spheres:
     call model%add_sphere([0.0_wp, 0.0_wp, 0.0_wp], 1.0_wp, 20, 40)
@@ -46,11 +45,12 @@
     call model%destroy()
 
     ! curves:
-    x = [ 0.0_wp, 1.0_wp, 2.0_wp ]
-    y = [ 0.0_wp, 1.0_wp, 3.0_wp ]
-    z = [ 0.0_wp, 1.0_wp, 4.0_wp ]
-    call model%add_curve(x,y,z,0.1_wp,10,&
-                        initial_cap=.true.,final_cap=.true.)
+    call model%add_curve(x = [ 0.0_wp, 1.0_wp, 2.0_wp, 5.0_wp ], &
+                         y = [ 0.0_wp, 1.0_wp, 3.0_wp, 5.0_wp ], &
+                         z = [ 0.0_wp, 1.0_wp, 4.0_wp, 5.0_wp ], &
+                         radius = 0.1_wp,&
+                         num_points = 10, &
+                         initial_cap=.true.,final_cap=.true.)
     call model%write_binary_stl_file('curve.stl',istat)
     write(*,*) istat
     call model%destroy()

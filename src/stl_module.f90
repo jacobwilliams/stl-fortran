@@ -165,7 +165,7 @@
 
     class(stl_file),intent(in)    :: me
     character(len=*),intent(in)   :: filename      !! STL file name
-    integer,intent(out)           :: istat         !! `iostat` code
+    integer,intent(out)           :: istat         !! `iostat` code (=0 if no errors)
     real(wp),intent(in),optional  :: bounding_box  !! scale vertices so that model fits in a
                                                    !! box of this size (if <=0, no scaling is done)
 
@@ -195,15 +195,17 @@
     if (istat==0) then
 
         ! write the file:
-        write(iunit) header,n_plates
-        do i = 1, me%n_plates
-            n = real(normal(me%plates(i)%v1,me%plates(i)%v2,me%plates(i)%v3), c_float)
-            v1 = real(me%plates(i)%v1*scale, c_float)
-            v2 = real(me%plates(i)%v2*scale, c_float)
-            v3 = real(me%plates(i)%v3*scale, c_float)
-            write(iunit) n,v1,v2,v3,z
-        end do
-
+        write(iunit,iostat=istat) header,n_plates
+        if (istat==0) then
+            do i = 1, me%n_plates
+                n = real(normal(me%plates(i)%v1,me%plates(i)%v2,me%plates(i)%v3), c_float)
+                v1 = real(me%plates(i)%v1*scale, c_float)
+                v2 = real(me%plates(i)%v2*scale, c_float)
+                v3 = real(me%plates(i)%v3*scale, c_float)
+                write(iunit,iostat=istat) n,v1,v2,v3,z
+                if (istat/=0) exit
+            end do
+        end if
         ! close the file:
         close(iunit)
 
@@ -222,7 +224,7 @@
 
     class(stl_file),intent(out) :: me
     character(len=*),intent(in) :: filename !! STL file name
-    integer,intent(out)         :: istat    !! `iostat` code
+    integer,intent(out)         :: istat    !! `iostat` code (=0 if no errors)
 
     integer :: iunit                        !! file unit number
     integer :: i                            !! counter
@@ -246,20 +248,25 @@
     if (istat==0) then
 
         ! read header:
-        read(iunit) header, n_plates
+        read(iunit,iostat=istat) header, n_plates
 
-        ! size arrays:
-        me%n_plates = int(n_plates)
-        allocate(me%plates(me%n_plates))
+        if (istat==0) then
 
-        ! read the data from the file:
-        do i = 1, me%n_plates
-            read(iunit) n,v1,v2,v3,z
-            ! only need to save the plates:
-            me%plates(i)%v1 = real(v1, wp)
-            me%plates(i)%v2 = real(v2, wp)
-            me%plates(i)%v3 = real(v3, wp)
-        end do
+            ! size arrays:
+            me%n_plates = int(n_plates)
+            allocate(me%plates(me%n_plates))
+
+            ! read the data from the file:
+            do i = 1, me%n_plates
+                read(iunit,iostat=istat) n,v1,v2,v3,z
+                if (istat/=0) exit
+                ! only need to save the plates:
+                me%plates(i)%v1 = real(v1, wp)
+                me%plates(i)%v2 = real(v2, wp)
+                me%plates(i)%v3 = real(v3, wp)
+            end do
+
+        end if
 
         ! close the file:
         close(iunit, iostat=istat)
@@ -280,7 +287,7 @@
     class(stl_file),intent(in)    :: me
     character(len=*),intent(in)   :: filename      !! STL file name
     character(len=*),intent(in)   :: modelname     !! the solid name (should not contain spaces)
-    integer,intent(out)           :: istat         !! `iostat` code
+    integer,intent(out)           :: istat         !! `iostat` code (=0 if no errors)
     real(wp),intent(in),optional  :: bounding_box  !! scale vertices so that model fits in a
                                                    !! box of this size (if <=0, no scaling is done)
 

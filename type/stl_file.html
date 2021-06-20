@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>81.5% of total for derived types.</p>Including implementation: 367 statements, 98.7% of total for derived types.">22 statements</a>
+    title="<p>82.1% of total for derived types.</p>Including implementation: 395 statements, 98.8% of total for derived types.">23 statements</a>
      </li> 
      
      
@@ -207,6 +207,10 @@
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-write_binary_stl_file">write_binary_stl_file</a>
       
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-read">read</a>
+      
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-destroy">destroy</a>
+      
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_plate">add_plate</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_sphere">add_sphere</a>
@@ -224,8 +228,6 @@
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-shift_mesh">shift_mesh</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-set_chunk_size">set_chunk_size</a>
-      
-      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-destroy">destroy</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-generate_circle">generate_circle</a>
       
@@ -385,6 +387,10 @@
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-write_binary_stl_file">write_binary_stl_file</a>
       
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-read">read</a>
+      
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-destroy">destroy</a>
+      
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_plate">add_plate</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-add_sphere">add_sphere</a>
@@ -402,8 +408,6 @@
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-shift_mesh">shift_mesh</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-set_chunk_size">set_chunk_size</a>
-      
-      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-destroy">destroy</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-generate_circle">generate_circle</a>
       
@@ -731,6 +735,180 @@ private subroutine <a href='../proc/write_binary_stl_file.html'>write_binary_stl
   <td></td><td>::</td>
   <td><strong>bounding_box</strong></td><td><p>scale vertices so that model fits in a
  box of this size (if &lt;=0, no scaling is done)</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-read"></span><h3>procedure, public :: <strong>read</strong>  => <a href='../proc/read_binary_stl_file.html'>read_binary_stl_file</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+private subroutine <a href='../proc/read_binary_stl_file.html'>read_binary_stl_file</a>(me, filename, istat)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Read a binary STL file.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>me</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>STL file name</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>istat</strong></td><td><p><code>iostat</code> code</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-destroy"></span><h3>procedure, public :: <strong>destroy</strong>  => <a href='../proc/destroy_stl_file.html'>destroy_stl_file</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+private subroutine <a href='../proc/destroy_stl_file.html'>destroy_stl_file</a>(me)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Destroy an <code>stl_file</code>.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>me</strong></td><td></td>
   
 </tr>
 
@@ -2141,78 +2319,6 @@ private subroutine <a href='../proc/set_chunk_size.html'>set_chunk_size</a>(me, 
     
      
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-destroy"></span><h3>procedure, public :: <strong>destroy</strong>  => <a href='../proc/destroy_stl_file.html'>destroy_stl_file</a> 
-    
-  </h3></div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          
-    
-    <h3>
-private subroutine <a href='../proc/destroy_stl_file.html'>destroy_stl_file</a>(me)
-    
-    
-   
-</h3>
-    
-
-
-
-
-
-
-
-<p>Destroy an <code>stl_file</code>.</p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-  <td>intent(inout)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-  
-</tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-generate_circle"></span><h3>procedure, private :: <strong>generate_circle</strong>  
     
   </h3></div>
@@ -2512,13 +2618,15 @@ private pure function <a href='../proc/compute_vertex_scale.html'>compute_vertex
     <div class="highlight"><pre><span></span>    <span class="k">type</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">stl_file</span>
         <span class="c">!! the main class for STL file I/O.</span>
         <span class="k">private</span>
-<span class="k">        </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">n_plates</span> <span class="o">=</span> <span class="mi">0</span>         <span class="c">!! number of plates</span>
-        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">1000</span>    <span class="c">!! expand `plates` array in chunks of this size</span>
+<span class="k">        </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">n_plates</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c">!! number of plates</span>
+        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c">!! expand `plates` array in chunks of this size</span>
         <span class="k">type</span><span class="p">(</span><span class="n">plate</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">plates</span> <span class="c">!! the array of plates</span>
         <span class="k">contains</span>
 <span class="k">        private</span>
 <span class="k">        procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">write_ascii_stl_file</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">write_binary_stl_file</span>
+        <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="k">read</span> <span class="o">=&gt;</span> <span class="n">read_binary_stl_file</span>
+        <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">destroy</span> <span class="o">=&gt;</span> <span class="n">destroy_stl_file</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_plate</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_sphere</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_cylinder</span>
@@ -2528,7 +2636,6 @@ private pure function <a href='../proc/compute_vertex_scale.html'>compute_vertex
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_axes</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">shift_mesh</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">set_chunk_size</span>
-        <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">destroy</span> <span class="o">=&gt;</span> <span class="n">destroy_stl_file</span>
         <span class="k">procedure</span> <span class="kd">::</span> <span class="n">generate_circle</span>
         <span class="k">procedure</span> <span class="kd">::</span> <span class="n">compute_vertex_scale</span>
     <span class="k">end type </span><span class="n">stl_file</span>

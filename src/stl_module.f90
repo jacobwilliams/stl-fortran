@@ -40,13 +40,15 @@
     type,public :: stl_file
         !! the main class for STL file I/O.
         private
-        integer :: n_plates = 0         !! number of plates
-        integer :: chunk_size = 1000    !! expand `plates` array in chunks of this size
+        integer :: n_plates = 0       !! number of plates
+        integer :: chunk_size = 1000  !! expand `plates` array in chunks of this size
         type(plate),dimension(:),allocatable :: plates !! the array of plates
         contains
         private
         procedure,public :: write_ascii_stl_file
         procedure,public :: write_binary_stl_file
+        procedure,public :: read => read_binary_stl_file
+        procedure,public :: destroy => destroy_stl_file
         procedure,public :: add_plate
         procedure,public :: add_sphere
         procedure,public :: add_cylinder
@@ -56,7 +58,6 @@
         procedure,public :: add_axes
         procedure,public :: shift_mesh
         procedure,public :: set_chunk_size
-        procedure,public :: destroy => destroy_stl_file
         procedure :: generate_circle
         procedure :: compute_vertex_scale
     end type stl_file
@@ -183,7 +184,7 @@
     scale = me%compute_vertex_scale(bounding_box)
 
     ! open the binary file:
-    open(newunit=iunit,&
+    open(newunit = iunit,&
          file    = filename,&
          action  = 'WRITE',&
          status  = 'REPLACE',&
@@ -209,6 +210,63 @@
     end if
 
     end subroutine write_binary_stl_file
+!********************************************************************************
+
+!********************************************************************************
+!>
+!  Read a binary STL file.
+
+    subroutine read_binary_stl_file(me,filename,istat)
+
+    implicit none
+
+    class(stl_file),intent(out) :: me
+    character(len=*),intent(in) :: filename !! STL file name
+    integer,intent(out)         :: istat    !! `iostat` code
+
+    integer :: iunit                        !! file unit number
+    integer :: i                            !! counter
+    integer(c_int32_t) :: n_plates          !! number of plates [32 bits]
+    real(c_float),dimension(3) :: n         !! normal vector [32 bits]
+    real(c_float),dimension(3) :: v1,v2,v3  !! vertex vectors [32 bits]
+    integer(c_int16_t) :: z                 !! Attribute byte count [16 bits]
+    character(kind=c_char,len=80) :: header !! [8 bits x 80]
+
+    call me%destroy()
+
+    ! open the binary file:
+    open(newunit = iunit,&
+         file    = filename,&
+         action  = 'READ',&
+         status  = 'OLD',&
+         form    = 'UNFORMATTED', &
+         access  = 'STREAM', &
+         iostat  = istat)
+
+    if (istat==0) then
+
+        ! read header:
+        read(iunit) header, n_plates
+
+        ! size arrays:
+        me%n_plates = int(n_plates)
+        allocate(me%plates(me%n_plates))
+
+        ! read the data from the file:
+        do i = 1, me%n_plates
+            read(iunit) n,v1,v2,v3,z
+            ! only need to save the plates:
+            me%plates(i)%v1 = real(v1, wp)
+            me%plates(i)%v2 = real(v2, wp)
+            me%plates(i)%v3 = real(v3, wp)
+        end do
+
+        ! close the file:
+        close(iunit, iostat=istat)
+
+    end if
+
+    end subroutine read_binary_stl_file
 !********************************************************************************
 
 !********************************************************************************

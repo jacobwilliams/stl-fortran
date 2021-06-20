@@ -105,13 +105,12 @@
     if (istat/=0) error stop 'error creating cones'
     call model%destroy()
 
-    ! ! cylinders:
-    ! call model%add_cylinder([0.0_wp,0.0_wp,0.0_wp],&
-    !                         [1.0_wp,0.0_wp,0.0_wp],&
-    !                          0.5_wp,10,initial_cap=.true.,final_cap=.true.)
-    ! call model%write_binary_stl_file('x.stl',istat)
-    ! if (istat/=0) error stop 'error creating x cylinder'
-    ! call model%destroy()
+    ! read test:
+    call model%read('cones.stl',istat)
+    if (istat/=0) error stop 'error reading binary file'
+    call model%write_binary_stl_file('cones_resaved.stl',istat)
+    if (istat/=0) error stop 'error writing binary file'
+    call model%destroy()
 
     write(*,*) 'Done.'
 

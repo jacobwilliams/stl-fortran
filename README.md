@@ -1,6 +1,6 @@
 ### Brief description
 
-Fortran code for generating STL (STereoLithography) files.
+Fortran code for reading and writing STL (STereoLithography) files.
 
 ### License
 

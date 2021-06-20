@@ -131,21 +131,21 @@
           <h3>Brief description</h3>
 <p>Fortran code for reading and writing STL (STereoLithography) files.</p>
 <h3>Example</h3>
-<div class="codehilite"><pre><span></span><code>    <span class="k">program </span><span class="n">main</span>
+<div class="codehilite"><pre><span></span><code>  <span class="k">program </span><span class="n">main</span>
 
-    <span class="k">use</span><span class="p">,</span><span class="k">intrinsic</span> <span class="kd">::</span> <span class="n">iso_fortran_env</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">wp</span> <span class="o">=&gt;</span> <span class="n">real64</span>
-    <span class="k">use </span><span class="n">stl_module</span>
+  <span class="k">use</span><span class="p">,</span><span class="k">intrinsic</span> <span class="kd">::</span> <span class="n">iso_fortran_env</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">wp</span> <span class="o">=&gt;</span> <span class="n">real64</span>
+  <span class="k">use </span><span class="n">stl_module</span>
 
-    <span class="k">implicit none</span>
+  <span class="k">implicit none</span>
 
-<span class="k">    type</span><span class="p">(</span><span class="n">stl_file</span><span class="p">)</span> <span class="kd">::</span> <span class="n">model</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">istat</span> <span class="c">!! status return code</span>
+<span class="k">  type</span><span class="p">(</span><span class="n">stl_file</span><span class="p">)</span> <span class="kd">::</span> <span class="n">model</span>
+  <span class="kt">integer</span> <span class="kd">::</span> <span class="n">istat</span> <span class="c">!! status return code</span>
 
-    <span class="c">! add a sphere:</span>
-    <span class="k">call </span><span class="n">model</span><span class="p">%</span><span class="n">add_sphere</span><span class="p">([</span><span class="mf">0.0_wp</span><span class="p">,</span> <span class="mf">0.0_wp</span><span class="p">,</span> <span class="mf">0.0_wp</span><span class="p">],</span> <span class="mf">1.0_wp</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-    <span class="k">call </span><span class="n">model</span><span class="p">%</span><span class="n">write_binary_stl_file</span><span class="p">(</span><span class="s1">&#39;spheres.stl&#39;</span><span class="p">,</span><span class="n">istat</span><span class="p">)</span>
+  <span class="c">! add a sphere:</span>
+  <span class="k">call </span><span class="n">model</span><span class="p">%</span><span class="n">add_sphere</span><span class="p">([</span><span class="mf">0.0_wp</span><span class="p">,</span> <span class="mf">0.0_wp</span><span class="p">,</span> <span class="mf">0.0_wp</span><span class="p">],</span> <span class="mf">1.0_wp</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">model</span><span class="p">%</span><span class="n">write_binary_stl_file</span><span class="p">(</span><span class="s1">&#39;sphere.stl&#39;</span><span class="p">,</span><span class="n">istat</span><span class="p">)</span>
 
-    <span class="k">end program </span><span class="n">main</span>
+  <span class="k">end program </span><span class="n">main</span>
 </code></pre></div>
 
 <h3>License</h3>

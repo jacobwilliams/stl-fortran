@@ -112,6 +112,14 @@
     if (istat/=0) error stop 'error writing binary file'
     call model%destroy()
 
+    ! read test 2:
+    ! this file is from: https://sbnarchive.psi.edu/pds4/non_mission/gaskell.phobos.shape-model/data/phobos_ver64q.tab
+    call model%read_tab_file('data/phobos_ver64q.tab',istat)
+    if (istat/=0) error stop 'error reading binary file'
+    call model%write_binary_stl_file('phobos_quad64q.stl',istat)
+    if (istat/=0) error stop 'error writing binary file'
+    call model%destroy()
+
     write(*,*) 'Done.'
 
     end program main

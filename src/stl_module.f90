@@ -48,6 +48,7 @@
         procedure,public :: write_ascii_stl_file
         procedure,public :: write_binary_stl_file
         procedure,public :: read => read_binary_stl_file
+        procedure,public :: read_tab_file
         procedure,public :: destroy => destroy_stl_file
         procedure,public :: add_plate
         procedure,public :: add_sphere
@@ -274,6 +275,105 @@
     end if
 
     end subroutine read_binary_stl_file
+!********************************************************************************
+
+!********************************************************************************
+!>
+!  Read a text vertex-facet file.
+!
+!### Example
+!  * https://sbnarchive.psi.edu/pds4/non_mission/gaskell.phobos.shape-model/data/phobos_ver64q.tab
+
+    subroutine read_tab_file(me,filename,istat)
+
+    implicit none
+
+    class(stl_file),intent(out) :: me
+    character(len=*),intent(in) :: filename !! STL file name
+    integer,intent(out)         :: istat    !! `iostat` code (=0 if no errors)
+
+    integer :: iunit  !! file unit
+    integer :: number_of_vertices !! number of vertices in the file
+    integer :: number_of_plates   !! number of plates defined in the file (three vertices)
+    integer :: i !! counter
+    integer :: ii !! vertex or plate index
+    integer :: i1 !! 1st vertex index of plate
+    integer :: i2 !! 2nd vertex index of plate
+    integer :: i3 !! 3rd vertex index of plate
+    real(wp),dimension(:,:),allocatable :: v !! vertices from the file
+    real(wp) :: x !! x coordinate of vertex
+    real(wp) :: y !! y coordinate of vertex
+    real(wp) :: z !! z coordinate of vertex
+
+    !initialize:
+    call me%destroy()
+
+    !open the file:
+    open(newunit = iunit,&
+         file    = filename,&
+         action  = 'READ',&
+         status  = 'OLD',&
+         iostat  = istat)
+
+    if (istat==0) then
+
+        read(iunit,*,iostat=istat) number_of_vertices, number_of_plates
+
+        if (istat==0) then
+
+            me%n_plates = number_of_plates
+            allocate(me%plates(me%n_plates))
+            allocate(v(3,number_of_vertices))
+
+            ! first accumulate the vertex coordinates:
+            do i = 1, number_of_vertices
+
+                read(iunit,*,iostat=istat) ii, x, y, z
+
+                !get the data:
+                if (istat==0) then
+                    v(1,i) = x
+                    v(2,i) = y
+                    v(3,i) = z
+                else
+                    write(error_unit,'(A)') 'Error reading vertex from file: '//trim(filename)
+                    call me%destroy()
+                    close(iunit)
+                    return
+                end if
+
+            end do
+
+            ! now, read the plate vertex indices, and add them to the class
+            do i = 1, number_of_plates
+
+                read(iunit,*,iostat=istat) ii,i1,i2,i3
+
+                if (istat==0) then
+                    me%plates(i)%v1 = v(:,i1)
+                    me%plates(i)%v2 = v(:,i2)
+                    me%plates(i)%v3 = v(:,i3)
+                else
+                    write(error_unit,'(A)') 'Error reading plate from file: '//trim(filename)
+                    call me%destroy()
+                    close(iunit)
+                    return
+                end if
+
+            end do
+
+            ! close the file:
+            close(iunit)
+            deallocate(v)
+
+        else
+            write(error_unit,'(A)') 'Error reading first line from file: '//trim(filename)
+            close(iunit)
+        end if
+
+    end if
+
+    end subroutine read_tab_file
 !********************************************************************************
 
 !********************************************************************************

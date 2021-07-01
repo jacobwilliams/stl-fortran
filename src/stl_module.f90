@@ -281,15 +281,41 @@
 !>
 !  Read a text vertex-facet file.
 !
+!### File Format
+!
+!  The file is a text file consisting of:
+!
+!  * Number of Vertices [int, %12d], Number of Triangular Plates [int, %12d]
+!  * Vertex table:
+!    * Vertex Number [int, %10d], x coordinate [real, %15.5f], y coordinate [real, %15.5f], z coordinate [real, %15.5f]
+!  * Plate table:
+!    * Plate Number [int, %10d], 1st Plate Vertex Number [int, %10d], 2nd Plate Vertex Number [int, %10d], 3rd Plate Vertex Number [int, %10d]
+!
 !### Example
+!
 !  * https://sbnarchive.psi.edu/pds4/non_mission/gaskell.phobos.shape-model/data/phobos_ver64q.tab
+!
+!```
+! 25350        49152
+! 1       -6.77444        6.26815        6.01149
+! 2       -6.63342        6.34195        6.08444
+! 3       -6.49302        6.41635        6.15759
+! 4       -6.34883        6.48872        6.22619
+!  ...
+! 1         1        67         2
+! 2         1        66        67
+! 3        66       132        67
+! 4        66       131       132
+! 5       131       197       132
+!  ...
+!```
 
     subroutine read_tab_file(me,filename,istat)
 
     implicit none
 
     class(stl_file),intent(out) :: me
-    character(len=*),intent(in) :: filename !! STL file name
+    character(len=*),intent(in) :: filename !! Vertex-facet file name
     integer,intent(out)         :: istat    !! `iostat` code (=0 if no errors)
 
     integer :: iunit  !! file unit

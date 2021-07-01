@@ -210,10 +210,36 @@ private subroutine read_tab_file(me, filename, istat)
 
     
     <p>Read a text vertex-facet file.</p>
+<h3>File Format</h3>
+<p>The file is a text file consisting of:</p>
+<ul>
+<li>Number of Vertices [int, %12d], Number of Triangular Plates [int, %12d]</li>
+<li>Vertex table:<ul>
+<li>Vertex Number [int, %10d], x coordinate [real, %15.5f], y coordinate [real, %15.5f], z coordinate [real, %15.5f]</li>
+</ul>
+</li>
+<li>Plate table:<ul>
+<li>Plate Number [int, %10d], 1st Plate Vertex Number [int, %10d], 2nd Plate Vertex Number [int, %10d], 3rd Plate Vertex Number [int, %10d]</li>
+</ul>
+</li>
+</ul>
 <h3>Example</h3>
 <ul>
 <li>https://sbnarchive.psi.edu/pds4/non_mission/gaskell.phobos.shape-model/data/phobos_ver64q.tab</li>
 </ul>
+<div class="codehilite"><pre><span></span><code> 25350        49152
+ 1       -6.77444        6.26815        6.01149
+ 2       -6.63342        6.34195        6.08444
+ 3       -6.49302        6.41635        6.15759
+ 4       -6.34883        6.48872        6.22619
+  ...
+ 1         1        67         2
+ 2         1        66        67
+ 3        66       132        67
+ 4        66       131       132
+ 5       131       197       132
+  ...
+</code></pre></div>
     
 
     <h3>Arguments</h3>
@@ -254,7 +280,7 @@ private subroutine read_tab_file(me, filename, istat)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>filename</strong></td><td><p>STL file name</p></td>
+  <td><strong>filename</strong></td><td><p>Vertex-facet file name</p></td>
   
 </tr>
 
@@ -345,7 +371,7 @@ private subroutine read_tab_file(me, filename, istat)
     <span class="k">implicit none</span>
 
 <span class="k">    class</span><span class="p">(</span><span class="n">stl_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">me</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">filename</span> <span class="c">!! STL file name</span>
+    <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">filename</span> <span class="c">!! Vertex-facet file name</span>
     <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">istat</span>    <span class="c">!! `iostat` code (=0 if no errors)</span>
 
     <span class="kt">integer</span> <span class="kd">::</span> <span class="n">iunit</span>  <span class="c">!! file unit</span>

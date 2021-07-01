@@ -10,7 +10,7 @@
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
-    <title>read_binary_stl_file &ndash; stl-fortran</title>
+    <title>read_tab_file &ndash; stl-fortran</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -108,7 +108,7 @@
     
   
   <div class="row">
-    <h1>read_binary_stl_file
+    <h1>read_tab_file
       <small>Subroutine</small>
     
     </h1>
@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 5.8% of total for procedures.">30 statements</a>
+    title="11.4% of total for procedures.">59 statements</a>
      </li> 
      
      
@@ -143,7 +143,7 @@
      <li><a href='../module/stl_module.html'>stl_module</a></li>
     
   
-     <li class="active">read_binary_stl_file</li>
+     <li class="active">read_tab_file</li>
   </ol>
 </div>
 </div>
@@ -187,7 +187,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/read_binary_stl_file.html#src">read_binary_stl_file</a>
+    <a class="list-group-item" href="../proc/read_tab_file.html#src">read_tab_file</a>
   </div>
 </div>
 
@@ -199,7 +199,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine read_binary_stl_file(me, filename, istat)
+private subroutine read_tab_file(me, filename, istat)
     
     
    
@@ -209,7 +209,11 @@ private subroutine read_binary_stl_file(me, filename, istat)
 
 
     
-    <p>Read a binary STL file.</p>
+    <p>Read a text vertex-facet file.</p>
+<h3>Example</h3>
+<ul>
+<li>https://sbnarchive.psi.edu/pds4/non_mission/gaskell.phobos.shape-model/data/phobos_ver64q.tab</li>
+</ul>
     
 
     <h3>Arguments</h3>
@@ -230,7 +234,7 @@ private subroutine read_binary_stl_file(me, filename, istat)
   
 <tr>
   
-  <td><span class="anchor" id="variable-me~6"></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
+  <td><span class="anchor" id="variable-me~7"></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
   <td>intent(out)</td>
   <td></td>
   
@@ -245,7 +249,7 @@ private subroutine read_binary_stl_file(me, filename, istat)
   
 <tr>
   
-  <td><span class="anchor" id="variable-filename~2"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-filename~3"></span>character(len=*),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -260,7 +264,7 @@ private subroutine read_binary_stl_file(me, filename, istat)
   
 <tr>
   
-  <td><span class="anchor" id="variable-istat~2"></span>integer,</td>
+  <td><span class="anchor" id="variable-istat~3"></span>integer,</td>
   <td>intent(out)</td>
   <td></td>
   
@@ -307,7 +311,7 @@ private subroutine read_binary_stl_file(me, filename, istat)
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/read_binary_stl_file.html#src">read_binary_stl_file</a>
+    <a class="list-group-item" href="../proc/read_tab_file.html#src">read_tab_file</a>
   </div>
 </div>
 
@@ -336,7 +340,7 @@ private subroutine read_binary_stl_file(me, filename, istat)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">read_binary_stl_file</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span><span class="n">istat</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">read_tab_file</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span><span class="n">istat</span><span class="p">)</span>
 
     <span class="k">implicit none</span>
 
@@ -344,54 +348,88 @@ private subroutine read_binary_stl_file(me, filename, istat)
     <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">filename</span> <span class="c">!! STL file name</span>
     <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">istat</span>    <span class="c">!! `iostat` code (=0 if no errors)</span>
 
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">iunit</span>                        <span class="c">!! file unit number</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>                            <span class="c">!! counter</span>
-    <span class="kt">integer</span><span class="p">(</span><span class="kt">c_int32_t</span><span class="p">)</span> <span class="kd">::</span> <span class="n">n_plates</span>          <span class="c">!! number of plates [32 bits]</span>
-    <span class="kt">real</span><span class="p">(</span><span class="kt">c_float</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">n</span>         <span class="c">!! normal vector [32 bits]</span>
-    <span class="kt">real</span><span class="p">(</span><span class="kt">c_float</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">v3</span>  <span class="c">!! vertex vectors [32 bits]</span>
-    <span class="kt">integer</span><span class="p">(</span><span class="kt">c_int16_t</span><span class="p">)</span> <span class="kd">::</span> <span class="n">z</span>                 <span class="c">!! Attribute byte count [16 bits]</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">c_char</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span> <span class="kd">::</span> <span class="n">header</span> <span class="c">!! [8 bits x 80]</span>
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">iunit</span>  <span class="c">!! file unit</span>
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">number_of_vertices</span> <span class="c">!! number of vertices in the file</span>
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">number_of_plates</span>   <span class="c">!! number of plates defined in the file (three vertices)</span>
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span> <span class="c">!! counter</span>
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ii</span> <span class="c">!! vertex or plate index</span>
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i1</span> <span class="c">!! 1st vertex index of plate</span>
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i2</span> <span class="c">!! 2nd vertex index of plate</span>
+    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i3</span> <span class="c">!! 3rd vertex index of plate</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">v</span> <span class="c">!! vertices from the file</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span> <span class="c">!! x coordinate of vertex</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">y</span> <span class="c">!! y coordinate of vertex</span>
+    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">z</span> <span class="c">!! z coordinate of vertex</span>
 
+    <span class="c">!initialize:</span>
     <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span>
 
-    <span class="c">! open the binary file:</span>
+    <span class="c">!open the file:</span>
     <span class="k">open</span><span class="p">(</span><span class="n">newunit</span> <span class="o">=</span> <span class="n">iunit</span><span class="p">,&amp;</span>
          <span class="k">file</span>    <span class="o">=</span> <span class="n">filename</span><span class="p">,&amp;</span>
          <span class="n">action</span>  <span class="o">=</span> <span class="s1">&#39;READ&#39;</span><span class="p">,&amp;</span>
          <span class="n">status</span>  <span class="o">=</span> <span class="s1">&#39;OLD&#39;</span><span class="p">,&amp;</span>
-         <span class="n">form</span>    <span class="o">=</span> <span class="s1">&#39;UNFORMATTED&#39;</span><span class="p">,</span> <span class="p">&amp;</span>
-         <span class="nb">access</span>  <span class="o">=</span> <span class="s1">&#39;STREAM&#39;</span><span class="p">,</span> <span class="p">&amp;</span>
          <span class="n">iostat</span>  <span class="o">=</span> <span class="n">istat</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
 
-        <span class="c">! read header:</span>
-        <span class="k">read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span> <span class="n">header</span><span class="p">,</span> <span class="n">n_plates</span>
+<span class="k">        read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span> <span class="n">number_of_vertices</span><span class="p">,</span> <span class="n">number_of_plates</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
 
-            <span class="c">! size arrays:</span>
-            <span class="n">me</span><span class="p">%</span><span class="n">n_plates</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_plates</span><span class="p">)</span>
+<span class="k">            </span><span class="n">me</span><span class="p">%</span><span class="n">n_plates</span> <span class="o">=</span> <span class="n">number_of_plates</span>
             <span class="k">allocate</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n_plates</span><span class="p">))</span>
+            <span class="k">allocate</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">number_of_vertices</span><span class="p">))</span>
 
-            <span class="c">! read the data from the file:</span>
-            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">me</span><span class="p">%</span><span class="n">n_plates</span>
-                <span class="k">read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span> <span class="n">n</span><span class="p">,</span><span class="n">v1</span><span class="p">,</span><span class="n">v2</span><span class="p">,</span><span class="n">v3</span><span class="p">,</span><span class="n">z</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span> <span class="k">exit</span>
-                <span class="c">! only need to save the plates:</span>
-                <span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v1</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">wp</span><span class="p">)</span>
-                <span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v2</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">wp</span><span class="p">)</span>
-                <span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v3</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">v3</span><span class="p">,</span> <span class="n">wp</span><span class="p">)</span>
-            <span class="k">end do</span>
+            <span class="c">! first accumulate the vertex coordinates:</span>
+            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">number_of_vertices</span>
 
-<span class="k">        end if</span>
+                <span class="k">read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span> <span class="n">ii</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
 
-        <span class="c">! close the file:</span>
-        <span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span> <span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span>
+                <span class="c">!get the data:</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">                    </span><span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span>
+                    <span class="n">v</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">y</span>
+                    <span class="n">v</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">z</span>
+                <span class="k">else</span>
+<span class="k">                    write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39;Error reading vertex from file: &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+                    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span>
+                    <span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span>
+                    <span class="k">return</span>
+<span class="k">                end if</span>
 
-    <span class="k">end if</span>
+<span class="k">            end do</span>
 
-<span class="k">    end subroutine </span><span class="n">read_binary_stl_file</span>
+            <span class="c">! now, read the plate vertex indices, and add them to the class</span>
+            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">number_of_plates</span>
+
+                <span class="k">read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span> <span class="n">ii</span><span class="p">,</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="n">i3</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">                    </span><span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v1</span> <span class="o">=</span> <span class="n">v</span><span class="p">(:,</span><span class="n">i1</span><span class="p">)</span>
+                    <span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v2</span> <span class="o">=</span> <span class="n">v</span><span class="p">(:,</span><span class="n">i2</span><span class="p">)</span>
+                    <span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v3</span> <span class="o">=</span> <span class="n">v</span><span class="p">(:,</span><span class="n">i3</span><span class="p">)</span>
+                <span class="k">else</span>
+<span class="k">                    write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39;Error reading plate from file: &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+                    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span>
+                    <span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span>
+                    <span class="k">return</span>
+<span class="k">                end if</span>
+
+<span class="k">            end do</span>
+
+            <span class="c">! close the file:</span>
+            <span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span>
+            <span class="k">deallocate</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+        <span class="k">else</span>
+<span class="k">            write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39;Error reading first line from file: &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+            <span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span>
+        <span class="k">end if</span>
+
+<span class="k">    end if</span>
+
+<span class="k">    end subroutine </span><span class="n">read_tab_file</span>
 </pre></div>
 
     </section>

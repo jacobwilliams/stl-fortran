@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>82.1% of total for derived types.</p>Including implementation: 401 statements, 98.8% of total for derived types.">23 statements</a>
+    title="<p>82.8% of total for derived types.</p>Including implementation: 461 statements, 98.9% of total for derived types.">24 statements</a>
      </li> 
      
      
@@ -208,6 +208,8 @@
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-write_binary_stl_file">write_binary_stl_file</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-read">read</a>
+      
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-read_tab_file">read_tab_file</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-destroy">destroy</a>
       
@@ -388,6 +390,8 @@
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-write_binary_stl_file">write_binary_stl_file</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-read">read</a>
+      
+      <a class="list-group-item" href="../type/stl_file.html#boundprocedure-read_tab_file">read_tab_file</a>
       
       <a class="list-group-item" href="../type/stl_file.html#boundprocedure-destroy">destroy</a>
       
@@ -781,6 +785,108 @@ private subroutine <a href='../proc/read_binary_stl_file.html'>read_binary_stl_f
 
 
 <p>Read a binary STL file.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>me</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>STL file name</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>istat</strong></td><td><p><code>iostat</code> code (=0 if no errors)</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-read_tab_file"></span><h3>procedure, public :: <strong>read_tab_file</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+private subroutine <a href='../proc/read_tab_file.html'>read_tab_file</a>(me, filename, istat)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Read a text vertex-facet file.</p><a href="../proc/read_tab_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -2626,6 +2732,7 @@ private pure function <a href='../proc/compute_vertex_scale.html'>compute_vertex
 <span class="k">        procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">write_ascii_stl_file</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">write_binary_stl_file</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="k">read</span> <span class="o">=&gt;</span> <span class="n">read_binary_stl_file</span>
+        <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">read_tab_file</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">destroy</span> <span class="o">=&gt;</span> <span class="n">destroy_stl_file</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_plate</span>
         <span class="k">procedure</span><span class="p">,</span><span class="k">public</span> <span class="kd">::</span> <span class="n">add_sphere</span>

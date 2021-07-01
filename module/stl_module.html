@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="100.0% of total for modules and submodules.">499 statements</a>
+    title="100.0% of total for modules and submodules.">559 statements</a>
      </li> 
      
      
@@ -253,6 +253,8 @@
       <a class="list-group-item" href="../module/stl_module.html#proc-write_binary_stl_file">write_binary_stl_file</a>
       
       <a class="list-group-item" href="../module/stl_module.html#proc-read_binary_stl_file">read_binary_stl_file</a>
+      
+      <a class="list-group-item" href="../module/stl_module.html#proc-read_tab_file">read_tab_file</a>
       
       <a class="list-group-item" href="../module/stl_module.html#proc-write_ascii_stl_file">write_ascii_stl_file</a>
       
@@ -539,6 +541,8 @@
       <a class="list-group-item" href="../module/stl_module.html#proc-write_binary_stl_file">write_binary_stl_file</a>
       
       <a class="list-group-item" href="../module/stl_module.html#proc-read_binary_stl_file">read_binary_stl_file</a>
+      
+      <a class="list-group-item" href="../module/stl_module.html#proc-read_tab_file">read_tab_file</a>
       
       <a class="list-group-item" href="../module/stl_module.html#proc-write_ascii_stl_file">write_ascii_stl_file</a>
       
@@ -849,6 +853,9 @@
        <td></td></tr>
       
        <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-read'>read</a></strong>  => read_binary_stl_file </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-read_tab_file'>read_tab_file</a></strong>  </td>
        <td></td></tr>
       
        <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-destroy'>destroy</a></strong>  => destroy_stl_file </td>
@@ -2061,6 +2068,95 @@ private subroutine <a href='../proc/read_binary_stl_file.html'>read_binary_stl_f
 
 
 <p>Read a binary STL file.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>me</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>STL file name</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>istat</strong></td><td><p><code>iostat</code> code (=0 if no errors)</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_tab_file"></span><h3>
+private subroutine <a href='../proc/read_tab_file.html'>read_tab_file</a>(me, filename, istat)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Read a text vertex-facet file.</p><a href="../proc/read_tab_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     

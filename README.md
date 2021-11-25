@@ -22,6 +22,17 @@ Fortran code for reading and writing STL (STereoLithography) files.
   end program main
 ```
 
+### Compiling
+
+A [Fortran Package Manager](https://github.com/fortran-lang/fpm) manifest file is included, so that the library and tests cases can be compiled with FPM. For example:
+
+```
+fpm build --profile release
+fpm test --profile release
+```
+
+To generate the documentation using [FORD](https://github.com/Fortran-FOSS-Programmers/ford), run: ```ford stl-fortran.md```
+
 ### License
 
 The stl-fortran source code and related files and documentation are distributed under a permissive free software [license](https://github.com/jacobwilliams/stl-fortran/blob/master/LICENSE.txt) (BSD-style).

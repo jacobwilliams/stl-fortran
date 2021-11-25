@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1A00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1A00.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:gaskell.phobos.shape-model:data:phobos_ver64q_tab</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>GASKELL PHOBOS Q=64 VERTEX-FACET SHAPE MODEL</title>
+    <information_model_version>1.10.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Citation_Information>
+      <author_list>Gaskell, R.</author_list>
+      <publication_year>2020</publication_year>
+      <description>Gaskell Q=64 vertex-facet shape model for Phobos</description>
+    </Citation_Information>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>1976-07-24Z</start_date_time>
+      <stop_date_time>1989-03-25Z</stop_date_time>
+    </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Derived</processing_level>
+      <Science_Facets>
+        <discipline_name>Small Bodies</discipline_name>
+        <facet1>Shape Model</facet1>
+      </Science_Facets>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>Viking</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:investigation:mission.viking</lid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Investigation_Area>
+      <name>Phobos 2</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:investigation:mission.phobos_2</lid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>Viking Orbiter 1</name>
+        <type>Spacecraft</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.vo1</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>VISUAL IMAGING SUBSYSTEM - CAMERA A for VO1</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:visa.vo1</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>Viking Orbiter 1</name>
+        <type>Spacecraft</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.vo1</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>VISUAL IMAGING SUBSYSTEM - CAMERA B for VO1</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:visb.vo1</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>Viking Orbiter 2</name>
+        <type>Spacecraft</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.vo2</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>Visual Imaging Subsystem - Camera A</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:visa.vo2</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>Viking Orbiter 2</name>
+        <type>Spacecraft</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.vo2</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>Visual Imaging Subsystem - Camera B</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:visb.vo2</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>Phobos 2</name>
+        <type>Spacecraft</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.phb2</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>Vsk-fregat</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:vsk.phb2</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>Mars I (Phobos)</name>
+      <type>Satellite</type>
+    </Target_Identification>
+  </Observation_Area>
+  <File_Area_Observational>
+    <File>
+      <file_name>phobos_ver64q.tab</file_name>
+      <local_identifier>file</local_identifier>
+      <creation_date_time>2020-05-05</creation_date_time>
+      <file_size unit="byte">4246671</file_size>
+      <records>74503</records>
+    </File>
+    <Table_Character>
+      <local_identifier>Counts_Table</local_identifier>
+      <offset unit="byte">0</offset>
+      <records>1</records>
+      <description>Table that gives the count of vertices and plates representing the surface of the
+numerical shape model of Phobos, derived from the Implicitly Connected Quadrilateral
+(ICQ) model with q = 64, also included in this data set.  The shape model comprises
+triangular plates and vertices that are specified in a body-fixed coordinate system.</description>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+      <Record_Character>
+        <fields>2</fields>
+        <groups>0</groups>
+        <record_length unit="byte">57</record_length>
+        <Field_Character>
+          <name>Number of Vertices</name>
+          <field_number>1</field_number>
+          <field_location unit="byte">1</field_location>
+          <data_type>ASCII_Integer</data_type>
+          <field_length unit="byte">12</field_length>
+          <field_format>%12d</field_format>
+          <description>Number of vertices in shape model</description>
+        </Field_Character>
+        <Field_Character>
+          <name>Number of Triangular Plates</name>
+          <field_number>2</field_number>
+          <field_location unit="byte">14</field_location>
+          <data_type>ASCII_Integer</data_type>
+          <field_length unit="byte">12</field_length>
+          <field_format>%12d</field_format>
+          <description>Number of triangular plates in shape model</description>
+        </Field_Character>
+      </Record_Character>
+    </Table_Character>
+    <Table_Character>
+      <local_identifier>Vertex_Table</local_identifier>
+      <offset unit="byte">57</offset>
+      <records>25350</records>
+      <description>Table of vertices of numerical shape model.  These are the vertices of plates that
+approximate the surface of the target.  Each row of this table contains the X, Y and
+Z coordinates of one vertex in a Cartesian coordinate system.</description>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+      <Record_Character>
+        <fields>4</fields>
+        <groups>0</groups>
+        <record_length unit="byte">57</record_length>
+        <Field_Character>
+          <name>Vertex Number</name>
+          <field_number>1</field_number>
+          <field_location unit="byte">1</field_location>
+          <data_type>ASCII_Integer</data_type>
+          <field_length unit="byte">10</field_length>
+          <field_format>%10d</field_format>
+          <description>A unique number assigned to each vertex</description>
+        </Field_Character>
+        <Field_Character>
+          <name>X Vertex Coordinate</name>
+          <field_number>2</field_number>
+          <field_location unit="byte">11</field_location>
+          <data_type>ASCII_Real</data_type>
+          <field_length unit="byte">15</field_length>
+          <field_format>%15.5f</field_format>
+          <description>The x coordinate of one vertex in the model</description>
+        </Field_Character>
+        <Field_Character>
+          <name>Y Vertex Coordinate</name>
+          <field_number>3</field_number>
+          <field_location unit="byte">26</field_location>
+          <data_type>ASCII_Real</data_type>
+          <field_length unit="byte">15</field_length>
+          <field_format>%15.5f</field_format>
+          <description>The y coordinate of one vertex in the model</description>
+        </Field_Character>
+        <Field_Character>
+          <name>Z Vertex Coordinate</name>
+          <field_number>4</field_number>
+          <field_location unit="byte">41</field_location>
+          <data_type>ASCII_Real</data_type>
+          <field_length unit="byte">15</field_length>
+          <field_format>%15.5f</field_format>
+          <description>The z coordinate of one vertex in the model</description>
+        </Field_Character>
+      </Record_Character>
+    </Table_Character>
+    <Table_Character>
+      <local_identifier>Plate_Table</local_identifier>
+      <offset unit="byte">1445007</offset>
+      <records>49152</records>
+      <description>Table of triangular plates of numerical shape model.  These triangular plates
+approximate the surface of the target.  The corners of each triangular plate are
+three vertices from the vertex table, indicated by vertex number.</description>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+      <Record_Character>
+        <fields>4</fields>
+        <groups>0</groups>
+        <record_length unit="byte">57</record_length>
+        <Field_Character>
+          <name>Plate Number</name>
+          <field_number>1</field_number>
+          <field_location unit="byte">1</field_location>
+          <data_type>ASCII_Integer</data_type>
+          <field_length unit="byte">10</field_length>
+          <field_format>%10d</field_format>
+          <description>A unique number assigned to each plate</description>
+        </Field_Character>
+        <Field_Character>
+          <name>First Plate Vertex Number</name>
+          <field_number>2</field_number>
+          <field_location unit="byte">11</field_location>
+          <data_type>ASCII_Integer</data_type>
+          <field_length unit="byte">10</field_length>
+          <field_format>%10d</field_format>
+          <description>The first vertex number of the three vertices defining this triangular plate.</description>
+        </Field_Character>
+        <Field_Character>
+          <name>Second Plate Vertex Number</name>
+          <field_number>3</field_number>
+          <field_location unit="byte">21</field_location>
+          <data_type>ASCII_Integer</data_type>
+          <field_length unit="byte">10</field_length>
+          <field_format>%10d</field_format>
+          <description>The second vertex number of the three vertices defining this triangular plate.</description>
+        </Field_Character>
+        <Field_Character>
+          <name>Third  Plate Vertex Number</name>
+          <field_number>4</field_number>
+          <field_location unit="byte">31</field_location>
+          <data_type>ASCII_Integer</data_type>
+          <field_length unit="byte">10</field_length>
+          <field_format>%10d</field_format>
+          <description>The third vertex number of the three vertices defining this triangular plate.</description>
+        </Field_Character>
+      </Record_Character>
+    </Table_Character>
+  </File_Area_Observational>
+</Product_Observational>
+

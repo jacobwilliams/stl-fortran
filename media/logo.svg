@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="170.74443mm"
+   height="145.6972mm"
+   viewBox="0 0 170.74443 145.6972"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="logo.png"
+   inkscape:export-xdpi="89.260002"
+   inkscape:export-ydpi="89.260002">
+  <defs
+     id="defs2">
+    <rect
+       x="0"
+       y="99.029762"
+       width="127"
+       height="37.041668"
+       id="rect867" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7341482"
+     inkscape:cx="340.32363"
+     inkscape:cy="266.53855"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1252"
+     inkscape:window-height="794"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(22.628171,-32.193097)">
+    <image
+       sodipodi:absref="phobos.png"
+       xlink:href="phobos.png"
+       y="33.956985"
+       x="-20.864283"
+       id="image843"
+       preserveAspectRatio="none"
+       height="142.16943"
+       width="167.21666" />
+    <text
+       xml:space="preserve"
+       id="text865"
+       style="font-size:10.58329999999999949px;line-height:1.25;font-family:'Clarendon BT';-inkscape-font-specification:'Clarendon BT';white-space:pre;shape-inside:url(#rect867);stroke-width:0.537626;"
+       transform="matrix(1.8600284,0,0,1.8600284,1.4247221,-89.969026)"><tspan
+         x="0"
+         y="108.39304"><tspan
+           style="stroke-width:0.537626">STL-Fortran</tspan></tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:3.52778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="rect871"
+       width="167.21666"
+       height="142.16943"
+       x="-20.864283"
+       y="33.956985" />
+  </g>
+</svg>

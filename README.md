@@ -1,3 +1,6 @@
+![stl-fortran](media/logo.png)
+============
+
 ### Brief description
 
 Fortran code for reading and writing STL (STereoLithography) files.

@@ -44,6 +44,10 @@ The stl-fortran source code and related files and documentation are distributed 
 
 The latest API documentation can be found [here](https://jacobwilliams.github.io/stl-fortran/). This was generated from the source code using [FORD](https://github.com/Fortran-FOSS-Programmers/ford).
 
+### See also
+
+  * [FOSSIL, FOrtran Stereo (si) Lithography parser](https://github.com/szaghi/FOSSIL)
+
 ### Reference
 
   * https://en.wikipedia.org/wiki/STL_(file_format)

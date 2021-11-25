@@ -70,8 +70,11 @@
                
             <li><a href="./lists/types.html">Derived Types</a></li>
         
+               
+        
         
             </ul>
+        
             </li>
 
 
@@ -87,6 +90,8 @@
 
                              
 <li class="visible-xs hidden-sm visible-lg"><a href="./lists/types.html">Derived Types</a></li>
+
+
 
 
           </ul>
@@ -112,8 +117,9 @@
         	 
 	<p> Find us on&hellip;</p>
         <p>
-        	 
+			 
           <a class="btn btn-lg btn-primary" href="https://github.com/jacobwilliams/stl-fortran" role="button">GitHub</a>
+			 
 			 
 			 
 			 
@@ -148,6 +154,13 @@
   <span class="k">end program </span><span class="n">main</span>
 </code></pre></div>
 
+<h3>Compiling</h3>
+<p>A <a href="https://github.com/fortran-lang/fpm">Fortran Package Manager</a> manifest file is included, so that the library and tests cases can be compiled with FPM. For example:</p>
+<div class="codehilite"><pre><span></span><code>fpm build --profile release
+fpm test --profile release
+</code></pre></div>
+
+<p>To generate the documentation using <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>, run: <code>ford stl-fortran.md</code></p>
 <h3>License</h3>
 <p>The stl-fortran source code and related files and documentation are distributed under a permissive free software <a href="https://github.com/jacobwilliams/stl-fortran/blob/master/LICENSE.txt">license</a> (BSD-style).</p>
 <h3>Documentation</h3>
@@ -170,7 +183,8 @@
               
               
               <a class="btn btn-lg btn-primary" href="https://github.com/jacobwilliams"><i class="fa fa-github fa-lg"></i></a>
-				  
+              
+              
 				  
               
               
@@ -186,141 +200,82 @@
       
       
       
+      
+      
 		
+        
       <div class="row">
+        
         <div class="col-xs-6 col-sm-3">
               <h3>Source Files</h3>
               <ul>
-                
-                  
                     <li><a href='./sourcefile/stl_module.f90.html'>stl_module.f90</a></li>
-                  
-                
-              </ul>
+                  </ul>
           </div>
+        
           
 		  <div class="col-xs-6 col-sm-3">
               <h3>Modules</h3>
               <ul>
-                
-                  
                     <li><a href='./module/stl_module.html'>stl_module</a></li>
-                  
-                
-              </ul>
+                  </ul>
           </div>
           
           
 		  <div class="col-xs-6 col-sm-3">
               <h3>Procedures</h3>
               <ul>
-                
-                  
                     <li><a href='./proc/add_arrow.html'>add_arrow</a></li>
-                  
-                
                   
                     <li><a href='./proc/add_axes.html'>add_axes</a></li>
                   
-                
-                  
                     <li><a href='./proc/add_cone.html'>add_cone</a></li>
-                  
-                
                   
                     <li><a href='./proc/add_curve.html'>add_curve</a></li>
                   
-                
-                  
                     <li><a href='./proc/add_cylinder.html'>add_cylinder</a></li>
-                  
-                
                   
                     <li><a href='./proc/add_plate.html'>add_plate</a></li>
                   
-                
-                  
                     <li><a href='./proc/add_sphere.html'>add_sphere</a></li>
-                  
-                
                   
                     <li><a href='./proc/axis_angle_rotation.html'>axis_angle_rotation</a></li>
                   
-                
-                  
                     <li><a href='./proc/compute_vertex_scale.html'>compute_vertex_scale</a></li>
                   
-                
-                  
                     <li><a href='./proc/cross.html'>cross</a></li>
-                  
-                
-                  
-                    <li><a href="./lists/procedures.html"><em>All procedures&hellip;</em></a></li>
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-                  
-                
-              </ul>
+                  </ul>
           </div>
           
           
 		  <div class="col-xs-6 col-sm-3">
               <h3>Derived Types</h3>
               <ul>
-                
-                  
                     <li><a href='./type/plate.html'>plate</a></li>
                   
-                
-                  
                     <li><a href='./type/stl_file.html'>stl_file</a></li>
-                  
-                
-              </ul>
+                  </ul>
           </div>
           
       </div>
+      
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
-                                          </p></div>
-        <div class="col-xs-6 col-md-4 col-md-push-4">
+        <div class="col-xs-6 col-md-6"><p>stl-fortran was developed by Jacob Williams<br>&copy; 2021 
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
-            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            
             
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> stl-fortran was developed by Jacob Williams</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

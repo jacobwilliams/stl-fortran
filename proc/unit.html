@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="STL-FORTRAN -- Fortran STL File I/O">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,54 +43,25 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../sourcefile/stl_module.f90.html">Source File</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/stl_module.f90.html">Source File</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -104,51 +70,29 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>unit
       <small>Function</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
     title=" 2.3% of total for procedures.">12 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/stl_module.f90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/stl_module.f90.html'>stl_module.f90</a></li>
-    
      <li><a href='../module/stl_module.html'>stl_module</a></li>
-    
-  
      <li class="active">unit</li>
   </ol>
 </div>
@@ -164,32 +108,9 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -197,73 +118,32 @@
   </div>
 </div>
 
-
-
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-private pure function unit(r) result(rhat)
+    <h2>private pure function unit(r) result(rhat)</h2>
     
-    
-   
-</h2>
-    
-  
 
-
-    
     <p>3x1 Unit vector.</p>
-    
 
     <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-r"></span>real(kind=wp),</td>
-  <td>intent(in),</td>
-  <td></td>
-  
-  <td>dimension(3)</td><td>::</td>
+<td>intent(in),</td>
+  <td></td>  <td>dimension(3)</td><td>::</td>
   <td><strong>r</strong></td><td></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-    
-    
-    
-    
-    
-    
-    
-   <h3>Return Value <small><span class="anchor" id="variable-rhat"></span>real(kind=wp),
-  dimension(3)</small></h3>
-    
-    
+   <h3>Return Value <small><span class="anchor" id="variable-rhat"></span>real(kind=wp),dimension(3)</small></h3>
     
     <br>
-    
-    
-     
     <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Called by</h3>
@@ -286,71 +166,71 @@ private pure function unit(r) result(rhat)
 <polygon fill="none" stroke="black" points="358,-150 304,-150 304,-126 358,-126 358,-150"/>
 <text text-anchor="middle" x="331" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50">unit</text>
 </g>
-<!-- proc~perpendicular -->
-<g id="proc~~unit~~CalledByGraph_node2" class="node">
-<title>proc~perpendicular</title>
-<g id="a_proc~~unit~~CalledByGraph_node2"><a xlink:href=".././proc/perpendicular.html" xlink:title="perpendicular">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="254.5,-234 166.5,-234 166.5,-210 254.5,-210 254.5,-234"/>
-<text text-anchor="middle" x="210.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">perpendicular</text>
-</a>
-</g>
-</g>
-<!-- proc~perpendicular&#45;&gt;proc~unit -->
-<g id="proc~~unit~~CalledByGraph_edge1" class="edge">
-<title>proc~perpendicular&#45;&gt;proc~unit</title>
-<path fill="none" stroke="#000000" d="M250.88,-209.92C256.83,-207.38 262.73,-204.41 268,-201 285.92,-189.4 302.67,-171.8 314.24,-158.15"/>
-<polygon fill="#000000" stroke="#000000" points="317.08,-160.2 320.73,-150.25 311.68,-155.75 317.08,-160.2"/>
-</g>
-<!-- proc~add_cone -->
-<g id="proc~~unit~~CalledByGraph_node3" class="node">
-<title>proc~add_cone</title>
-<g id="a_proc~~unit~~CalledByGraph_node3"><a xlink:href=".././proc/add_cone.html" xlink:title="add_cone">
-<polygon fill="#d9534f" stroke="#d9534f" points="242.5,-150 178.5,-150 178.5,-126 242.5,-126 242.5,-150"/>
-<text text-anchor="middle" x="210.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add_cone</text>
-</a>
-</g>
-</g>
-<!-- proc~add_cone&#45;&gt;proc~unit -->
-<g id="proc~~unit~~CalledByGraph_edge2" class="edge">
-<title>proc~add_cone&#45;&gt;proc~unit</title>
-<path fill="none" stroke="#000000" d="M242.63,-138C258.27,-138 277.31,-138 293.62,-138"/>
-<polygon fill="#000000" stroke="#000000" points="293.88,-141.5 303.88,-138 293.88,-134.5 293.88,-141.5"/>
-</g>
 <!-- proc~generate_circle -->
-<g id="proc~~unit~~CalledByGraph_node4" class="node">
+<g id="proc~~unit~~CalledByGraph_node2" class="node">
 <title>proc~generate_circle</title>
-<g id="a_proc~~unit~~CalledByGraph_node4"><a xlink:href=".././proc/generate_circle.html" xlink:title="generate_circle">
+<g id="a_proc~~unit~~CalledByGraph_node2"><a xlink:href=".././proc/generate_circle.html" xlink:title="generate_circle">
 <polygon fill="#d9534f" stroke="#d9534f" points="106,-234 11,-234 11,-210 106,-210 106,-234"/>
 <text text-anchor="middle" x="58.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">generate_circle</text>
 </a>
 </g>
 </g>
 <!-- proc~generate_circle&#45;&gt;proc~unit -->
-<g id="proc~~unit~~CalledByGraph_edge3" class="edge">
+<g id="proc~~unit~~CalledByGraph_edge1" class="edge">
 <title>proc~generate_circle&#45;&gt;proc~unit</title>
 <path fill="none" stroke="#000000" d="M86.25,-234.06C128.03,-250.96 210.02,-276.1 268,-243 299.05,-225.28 316.11,-185.24 324.13,-160.05"/>
 <polygon fill="#000000" stroke="#000000" points="327.55,-160.85 327.03,-150.27 320.83,-158.86 327.55,-160.85"/>
 </g>
-<!-- proc~generate_circle&#45;&gt;proc~perpendicular -->
-<g id="proc~~unit~~CalledByGraph_edge8" class="edge">
-<title>proc~generate_circle&#45;&gt;proc~perpendicular</title>
-<path fill="none" stroke="#000000" d="M106.14,-222C121.94,-222 139.71,-222 156.01,-222"/>
-<polygon fill="#000000" stroke="#000000" points="156.47,-225.5 166.47,-222 156.47,-218.5 156.47,-225.5"/>
-</g>
 <!-- proc~axis_angle_rotation -->
-<g id="proc~~unit~~CalledByGraph_node8" class="node">
+<g id="proc~~unit~~CalledByGraph_node4" class="node">
 <title>proc~axis_angle_rotation</title>
-<g id="a_proc~~unit~~CalledByGraph_node8"><a xlink:href=".././proc/axis_angle_rotation.html" xlink:title="axis_angle_rotation">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="268,-192 153,-192 153,-168 268,-168 268,-192"/>
-<text text-anchor="middle" x="210.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">axis_angle_rotation</text>
+<g id="a_proc~~unit~~CalledByGraph_node4"><a xlink:href=".././proc/axis_angle_rotation.html" xlink:title="axis_angle_rotation">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="268,-234 153,-234 153,-210 268,-210 268,-234"/>
+<text text-anchor="middle" x="210.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">axis_angle_rotation</text>
 </a>
 </g>
 </g>
 <!-- proc~generate_circle&#45;&gt;proc~axis_angle_rotation -->
-<g id="proc~~unit~~CalledByGraph_edge11" class="edge">
+<g id="proc~~unit~~CalledByGraph_edge10" class="edge">
 <title>proc~generate_circle&#45;&gt;proc~axis_angle_rotation</title>
+<path fill="none" stroke="#000000" d="M106.14,-222C117.7,-222 130.31,-222 142.62,-222"/>
+<polygon fill="#000000" stroke="#000000" points="142.86,-225.5 152.86,-222 142.86,-218.5 142.86,-225.5"/>
+</g>
+<!-- proc~perpendicular -->
+<g id="proc~~unit~~CalledByGraph_node8" class="node">
+<title>proc~perpendicular</title>
+<g id="a_proc~~unit~~CalledByGraph_node8"><a xlink:href=".././proc/perpendicular.html" xlink:title="perpendicular">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="254.5,-192 166.5,-192 166.5,-168 254.5,-168 254.5,-192"/>
+<text text-anchor="middle" x="210.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">perpendicular</text>
+</a>
+</g>
+</g>
+<!-- proc~generate_circle&#45;&gt;proc~perpendicular -->
+<g id="proc~~unit~~CalledByGraph_edge11" class="edge">
+<title>proc~generate_circle&#45;&gt;proc~perpendicular</title>
 <path fill="none" stroke="#000000" d="M102.48,-209.96C119.43,-205.22 139.06,-199.72 156.85,-194.74"/>
 <polygon fill="#000000" stroke="#000000" points="157.82,-198.1 166.51,-192.04 155.94,-191.36 157.82,-198.1"/>
+</g>
+<!-- proc~normal -->
+<g id="proc~~unit~~CalledByGraph_node3" class="node">
+<title>proc~normal</title>
+<g id="a_proc~~unit~~CalledByGraph_node3"><a xlink:href=".././proc/normal.html" xlink:title="normal">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="237.5,-150 183.5,-150 183.5,-126 237.5,-126 237.5,-150"/>
+<text text-anchor="middle" x="210.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">normal</text>
+</a>
+</g>
+</g>
+<!-- proc~normal&#45;&gt;proc~unit -->
+<g id="proc~~unit~~CalledByGraph_edge2" class="edge">
+<title>proc~normal&#45;&gt;proc~unit</title>
+<path fill="none" stroke="#000000" d="M237.51,-138C253.91,-138 275.34,-138 293.44,-138"/>
+<polygon fill="#000000" stroke="#000000" points="293.65,-141.5 303.65,-138 293.65,-134.5 293.65,-141.5"/>
+</g>
+<!-- proc~axis_angle_rotation&#45;&gt;proc~unit -->
+<g id="proc~~unit~~CalledByGraph_edge3" class="edge">
+<title>proc~axis_angle_rotation&#45;&gt;proc~unit</title>
+<path fill="none" stroke="#000000" d="M250.88,-209.92C256.83,-207.38 262.73,-204.41 268,-201 285.92,-189.4 302.67,-171.8 314.24,-158.15"/>
+<polygon fill="#000000" stroke="#000000" points="317.08,-160.2 320.73,-150.25 311.68,-155.75 317.08,-160.2"/>
 </g>
 <!-- proc~add_curve -->
 <g id="proc~~unit~~CalledByGraph_node5" class="node">
@@ -367,19 +247,19 @@ private pure function unit(r) result(rhat)
 <path fill="none" stroke="#000000" d="M244.51,-107.7C260.05,-113.21 278.6,-119.78 294.45,-125.4"/>
 <polygon fill="#000000" stroke="#000000" points="293.32,-128.71 303.92,-128.76 295.66,-122.12 293.32,-128.71"/>
 </g>
-<!-- proc~normal -->
+<!-- proc~add_cone -->
 <g id="proc~~unit~~CalledByGraph_node6" class="node">
-<title>proc~normal</title>
-<g id="a_proc~~unit~~CalledByGraph_node6"><a xlink:href=".././proc/normal.html" xlink:title="normal">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="237.5,-66 183.5,-66 183.5,-42 237.5,-42 237.5,-66"/>
-<text text-anchor="middle" x="210.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">normal</text>
+<title>proc~add_cone</title>
+<g id="a_proc~~unit~~CalledByGraph_node6"><a xlink:href=".././proc/add_cone.html" xlink:title="add_cone">
+<polygon fill="#d9534f" stroke="#d9534f" points="242.5,-66 178.5,-66 178.5,-42 242.5,-42 242.5,-66"/>
+<text text-anchor="middle" x="210.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add_cone</text>
 </a>
 </g>
 </g>
-<!-- proc~normal&#45;&gt;proc~unit -->
-<g id="proc~~unit~~CalledByGraph_edge5" class="edge">
-<title>proc~normal&#45;&gt;proc~unit</title>
-<path fill="none" stroke="#000000" d="M237.66,-61.07C247.61,-64.42 258.78,-69.03 268,-75 285.92,-86.6 302.67,-104.2 314.24,-117.85"/>
+<!-- proc~add_cone&#45;&gt;proc~unit -->
+<g id="proc~~unit~~CalledByGraph_edge6" class="edge">
+<title>proc~add_cone&#45;&gt;proc~unit</title>
+<path fill="none" stroke="#000000" d="M242.57,-62.79C251.18,-65.95 260.27,-69.99 268,-75 285.92,-86.6 302.67,-104.2 314.24,-117.85"/>
 <polygon fill="#000000" stroke="#000000" points="311.68,-120.25 320.73,-125.75 317.08,-115.8 311.68,-120.25"/>
 </g>
 <!-- proc~add_cylinder -->
@@ -392,46 +272,46 @@ private pure function unit(r) result(rhat)
 </g>
 </g>
 <!-- proc~add_cylinder&#45;&gt;proc~unit -->
-<g id="proc~~unit~~CalledByGraph_edge6" class="edge">
+<g id="proc~~unit~~CalledByGraph_edge5" class="edge">
 <title>proc~add_cylinder&#45;&gt;proc~unit</title>
 <path fill="none" stroke="#000000" d="M251.09,-22.73C257.14,-25.46 263.02,-28.84 268,-33 294.87,-55.48 312.91,-92.78 322.31,-116.34"/>
 <polygon fill="#000000" stroke="#000000" points="319.08,-117.71 325.91,-125.81 325.63,-115.22 319.08,-117.71"/>
 </g>
-<!-- proc~axis_angle_rotation&#45;&gt;proc~unit -->
+<!-- proc~perpendicular&#45;&gt;proc~unit -->
 <g id="proc~~unit~~CalledByGraph_edge7" class="edge">
-<title>proc~axis_angle_rotation&#45;&gt;proc~unit</title>
+<title>proc~perpendicular&#45;&gt;proc~unit</title>
 <path fill="none" stroke="#000000" d="M245.46,-167.96C260.72,-162.56 278.73,-156.17 294.2,-150.69"/>
 <polygon fill="#000000" stroke="#000000" points="295.69,-153.87 303.95,-147.23 293.35,-147.28 295.69,-153.87"/>
 </g>
-<!-- proc~write_ascii_stl_file -->
+<!-- proc~write_binary_stl_file -->
 <g id="proc~~unit~~CalledByGraph_node9" class="node">
+<title>proc~write_binary_stl_file</title>
+<g id="a_proc~~unit~~CalledByGraph_node9"><a xlink:href=".././proc/write_binary_stl_file.html" xlink:title="write_binary_stl_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="117,-171 0,-171 0,-147 117,-147 117,-171"/>
+<text text-anchor="middle" x="58.5" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_binary_stl_file</text>
+</a>
+</g>
+</g>
+<!-- proc~write_binary_stl_file&#45;&gt;proc~normal -->
+<g id="proc~~unit~~CalledByGraph_edge8" class="edge">
+<title>proc~write_binary_stl_file&#45;&gt;proc~normal</title>
+<path fill="none" stroke="#000000" d="M117.06,-150.94C135.95,-148.3 156.39,-145.43 173.24,-143.08"/>
+<polygon fill="#000000" stroke="#000000" points="173.8,-146.53 183.22,-141.68 172.83,-139.6 173.8,-146.53"/>
+</g>
+<!-- proc~write_ascii_stl_file -->
+<g id="proc~~unit~~CalledByGraph_node10" class="node">
 <title>proc~write_ascii_stl_file</title>
-<g id="a_proc~~unit~~CalledByGraph_node9"><a xlink:href=".././proc/write_ascii_stl_file.html" xlink:title="write_ascii_stl_file">
-<polygon fill="#d9534f" stroke="#d9534f" points="112,-87 5,-87 5,-63 112,-63 112,-87"/>
-<text text-anchor="middle" x="58.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_ascii_stl_file</text>
+<g id="a_proc~~unit~~CalledByGraph_node10"><a xlink:href=".././proc/write_ascii_stl_file.html" xlink:title="write_ascii_stl_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="112,-129 5,-129 5,-105 112,-105 112,-129"/>
+<text text-anchor="middle" x="58.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_ascii_stl_file</text>
 </a>
 </g>
 </g>
 <!-- proc~write_ascii_stl_file&#45;&gt;proc~normal -->
 <g id="proc~~unit~~CalledByGraph_edge9" class="edge">
 <title>proc~write_ascii_stl_file&#45;&gt;proc~normal</title>
-<path fill="none" stroke="#000000" d="M112.38,-67.6C132.5,-64.78 154.95,-61.64 173.2,-59.08"/>
-<polygon fill="#000000" stroke="#000000" points="173.71,-62.54 183.13,-57.69 172.74,-55.61 173.71,-62.54"/>
-</g>
-<!-- proc~write_binary_stl_file -->
-<g id="proc~~unit~~CalledByGraph_node10" class="node">
-<title>proc~write_binary_stl_file</title>
-<g id="a_proc~~unit~~CalledByGraph_node10"><a xlink:href=".././proc/write_binary_stl_file.html" xlink:title="write_binary_stl_file">
-<polygon fill="#d9534f" stroke="#d9534f" points="117,-45 0,-45 0,-21 117,-21 117,-45"/>
-<text text-anchor="middle" x="58.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_binary_stl_file</text>
-</a>
-</g>
-</g>
-<!-- proc~write_binary_stl_file&#45;&gt;proc~normal -->
-<g id="proc~~unit~~CalledByGraph_edge10" class="edge">
-<title>proc~write_binary_stl_file&#45;&gt;proc~normal</title>
-<path fill="none" stroke="#000000" d="M117.06,-41.06C135.95,-43.7 156.39,-46.57 173.24,-48.92"/>
-<polygon fill="#000000" stroke="#000000" points="172.83,-52.4 183.22,-50.32 173.8,-45.47 172.83,-52.4"/>
+<path fill="none" stroke="#000000" d="M112.38,-124.4C132.5,-127.22 154.95,-130.36 173.2,-132.92"/>
+<polygon fill="#000000" stroke="#000000" points="172.74,-136.39 183.13,-134.31 173.71,-129.46 172.74,-136.39"/>
 </g>
 </g>
 </svg>
@@ -496,34 +376,11 @@ private pure function unit(r) result(rhat)
     </div></div></div></div>
       </div>
     </div>
-     
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -531,73 +388,58 @@ private pure function unit(r) result(rhat)
   </div>
 </div>
 
-
-
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
-    
-    
     
     
 
     
     
-    
-    
-    
 
 
-    
-    
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">pure function </span><span class="n">unit</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">rhat</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">pure function </span><span class="n">unit</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">rhat</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">implicit none</span>
+<span class="w">    </span><span class="k">implicit none</span>
 
-<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>            <span class="kd">::</span> <span class="n">rhat</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">r</span>
+<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">rhat</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
 
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">rmag</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rmag</span><span class="w"></span>
 
-    <span class="n">rmag</span> <span class="o">=</span> <span class="nb">norm2</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="w">    </span><span class="n">rmag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">norm2</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">rmag</span><span class="o">/=</span><span class="n">zero</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        </span><span class="n">rhat</span> <span class="o">=</span> <span class="n">r</span><span class="o">/</span><span class="n">rmag</span>
-    <span class="k">else</span>
-<span class="k">        </span><span class="n">rhat</span> <span class="o">=</span> <span class="n">zero</span>
-    <span class="k">end if</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rmag</span><span class="o">/=</span><span class="n">zero</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">rhat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="o">/</span><span class="n">rmag</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        </span><span class="n">rhat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zero</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span>
 
-<span class="k">    end function </span><span class="n">unit</span>
+<span class="k">    end function </span><span class="n">unit</span><span class="w"></span>
 </pre></div>
 
     </section>
     <br>
     
-    
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>stl-fortran was developed by Jacob Williams<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>stl-fortran was developed by Jacob Williams<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -625,14 +467,11 @@ private pure function unit(r) result(rhat)
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

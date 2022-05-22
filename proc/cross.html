@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="STL-FORTRAN -- Fortran STL File I/O">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,54 +43,25 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../sourcefile/stl_module.f90.html">Source File</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/stl_module.f90.html">Source File</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -104,51 +70,29 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>cross
       <small>Function</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
     title=" 1.7% of total for procedures.">9 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/stl_module.f90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/stl_module.f90.html'>stl_module.f90</a></li>
-    
      <li><a href='../module/stl_module.html'>stl_module</a></li>
-    
-  
      <li class="active">cross</li>
   </ol>
 </div>
@@ -164,32 +108,9 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -197,88 +118,38 @@
   </div>
 </div>
 
-
-
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-private pure function cross(a, b) result(axb)
+    <h2>private pure function cross(a, b) result(axb)</h2>
     
-    
-   
-</h2>
-    
-  
 
-
-    
     <p>Vector cross product.</p>
-    
 
     <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-a"></span>real(kind=wp),</td>
-  <td>intent(in),</td>
-  <td></td>
-  
-  <td>dimension(3)</td><td>::</td>
+<td>intent(in),</td>
+  <td></td>  <td>dimension(3)</td><td>::</td>
   <td><strong>a</strong></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-b"></span>real(kind=wp),</td>
-  <td>intent(in),</td>
-  <td></td>
-  
-  <td>dimension(3)</td><td>::</td>
+<td>intent(in),</td>
+  <td></td>  <td>dimension(3)</td><td>::</td>
   <td><strong>b</strong></td><td></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-    
-    
-    
-    
-    
-    
-    
-   <h3>Return Value <small><span class="anchor" id="variable-axb"></span>real(kind=wp),
-  dimension(3)</small></h3>
-    
-    
+   <h3>Return Value <small><span class="anchor" id="variable-axb"></span>real(kind=wp),dimension(3)</small></h3>
     
     <br>
-    
-    
-     
     <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Called by</h3>
@@ -298,43 +169,73 @@ private pure function cross(a, b) result(axb)
 <!-- proc~cross -->
 <g id="proc~~cross~~CalledByGraph_node1" class="node">
 <title>proc~cross</title>
-<polygon fill="none" stroke="black" points="358,-87 304,-87 304,-63 358,-63 358,-87"/>
-<text text-anchor="middle" x="331" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50">cross</text>
-</g>
-<!-- proc~axis_angle_rotation -->
-<g id="proc~~cross~~CalledByGraph_node2" class="node">
-<title>proc~axis_angle_rotation</title>
-<g id="a_proc~~cross~~CalledByGraph_node2"><a xlink:href=".././proc/axis_angle_rotation.html" xlink:title="axis_angle_rotation">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="268,-108 153,-108 153,-84 268,-84 268,-108"/>
-<text text-anchor="middle" x="210.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">axis_angle_rotation</text>
-</a>
-</g>
-</g>
-<!-- proc~axis_angle_rotation&#45;&gt;proc~cross -->
-<g id="proc~~cross~~CalledByGraph_edge1" class="edge">
-<title>proc~axis_angle_rotation&#45;&gt;proc~cross</title>
-<path fill="none" stroke="#000000" d="M268.32,-85.93C277.09,-84.38 285.93,-82.81 294.08,-81.37"/>
-<polygon fill="#000000" stroke="#000000" points="294.72,-84.81 303.96,-79.62 293.5,-77.91 294.72,-84.81"/>
+<polygon fill="none" stroke="black" points="358,-45 304,-45 304,-21 358,-21 358,-45"/>
+<text text-anchor="middle" x="331" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">cross</text>
 </g>
 <!-- proc~normal -->
-<g id="proc~~cross~~CalledByGraph_node3" class="node">
+<g id="proc~~cross~~CalledByGraph_node2" class="node">
 <title>proc~normal</title>
-<g id="a_proc~~cross~~CalledByGraph_node3"><a xlink:href=".././proc/normal.html" xlink:title="normal">
+<g id="a_proc~~cross~~CalledByGraph_node2"><a xlink:href=".././proc/normal.html" xlink:title="normal">
 <polygon fill="#d94e8f" stroke="#d94e8f" points="237.5,-66 183.5,-66 183.5,-42 237.5,-42 237.5,-66"/>
 <text text-anchor="middle" x="210.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">normal</text>
 </a>
 </g>
 </g>
 <!-- proc~normal&#45;&gt;proc~cross -->
-<g id="proc~~cross~~CalledByGraph_edge2" class="edge">
+<g id="proc~~cross~~CalledByGraph_edge1" class="edge">
 <title>proc~normal&#45;&gt;proc~cross</title>
-<path fill="none" stroke="#000000" d="M237.51,-58.61C253.98,-61.53 275.54,-65.35 293.69,-68.57"/>
-<polygon fill="#000000" stroke="#000000" points="293.19,-72.03 303.65,-70.33 294.41,-65.14 293.19,-72.03"/>
+<path fill="none" stroke="#000000" d="M237.51,-49.39C253.98,-46.47 275.54,-42.65 293.69,-39.43"/>
+<polygon fill="#000000" stroke="#000000" points="294.41,-42.86 303.65,-37.67 293.19,-35.97 294.41,-42.86"/>
+</g>
+<!-- proc~axis_angle_rotation -->
+<g id="proc~~cross~~CalledByGraph_node3" class="node">
+<title>proc~axis_angle_rotation</title>
+<g id="a_proc~~cross~~CalledByGraph_node3"><a xlink:href=".././proc/axis_angle_rotation.html" xlink:title="axis_angle_rotation">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="268,-24 153,-24 153,0 268,0 268,-24"/>
+<text text-anchor="middle" x="210.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">axis_angle_rotation</text>
+</a>
+</g>
+</g>
+<!-- proc~axis_angle_rotation&#45;&gt;proc~cross -->
+<g id="proc~~cross~~CalledByGraph_edge2" class="edge">
+<title>proc~axis_angle_rotation&#45;&gt;proc~cross</title>
+<path fill="none" stroke="#000000" d="M268.32,-22.07C277.09,-23.62 285.93,-25.19 294.08,-26.63"/>
+<polygon fill="#000000" stroke="#000000" points="293.5,-30.09 303.96,-28.38 294.72,-23.19 293.5,-30.09"/>
+</g>
+<!-- proc~generate_circle -->
+<g id="proc~~cross~~CalledByGraph_node4" class="node">
+<title>proc~generate_circle</title>
+<g id="a_proc~~cross~~CalledByGraph_node4"><a xlink:href=".././proc/generate_circle.html" xlink:title="generate_circle">
+<polygon fill="#d9534f" stroke="#d9534f" points="106,-24 11,-24 11,0 106,0 106,-24"/>
+<text text-anchor="middle" x="58.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">generate_circle</text>
+</a>
+</g>
+</g>
+<!-- proc~generate_circle&#45;&gt;proc~axis_angle_rotation -->
+<g id="proc~~cross~~CalledByGraph_edge5" class="edge">
+<title>proc~generate_circle&#45;&gt;proc~axis_angle_rotation</title>
+<path fill="none" stroke="#000000" d="M106.14,-12C117.7,-12 130.31,-12 142.62,-12"/>
+<polygon fill="#000000" stroke="#000000" points="142.86,-15.5 152.86,-12 142.86,-8.5 142.86,-15.5"/>
+</g>
+<!-- proc~write_binary_stl_file -->
+<g id="proc~~cross~~CalledByGraph_node5" class="node">
+<title>proc~write_binary_stl_file</title>
+<g id="a_proc~~cross~~CalledByGraph_node5"><a xlink:href=".././proc/write_binary_stl_file.html" xlink:title="write_binary_stl_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="117,-108 0,-108 0,-84 117,-84 117,-108"/>
+<text text-anchor="middle" x="58.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_binary_stl_file</text>
+</a>
+</g>
+</g>
+<!-- proc~write_binary_stl_file&#45;&gt;proc~normal -->
+<g id="proc~~cross~~CalledByGraph_edge3" class="edge">
+<title>proc~write_binary_stl_file&#45;&gt;proc~normal</title>
+<path fill="none" stroke="#000000" d="M102.48,-83.96C125.05,-77.64 152.39,-69.99 173.78,-64"/>
+<polygon fill="#000000" stroke="#000000" points="174.77,-67.36 183.45,-61.29 172.88,-60.62 174.77,-67.36"/>
 </g>
 <!-- proc~write_ascii_stl_file -->
-<g id="proc~~cross~~CalledByGraph_node4" class="node">
+<g id="proc~~cross~~CalledByGraph_node6" class="node">
 <title>proc~write_ascii_stl_file</title>
-<g id="a_proc~~cross~~CalledByGraph_node4"><a xlink:href=".././proc/write_ascii_stl_file.html" xlink:title="write_ascii_stl_file">
+<g id="a_proc~~cross~~CalledByGraph_node6"><a xlink:href=".././proc/write_ascii_stl_file.html" xlink:title="write_ascii_stl_file">
 <polygon fill="#d9534f" stroke="#d9534f" points="112,-66 5,-66 5,-42 112,-42 112,-66"/>
 <text text-anchor="middle" x="58.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_ascii_stl_file</text>
 </a>
@@ -345,36 +246,6 @@ private pure function cross(a, b) result(axb)
 <title>proc~write_ascii_stl_file&#45;&gt;proc~normal</title>
 <path fill="none" stroke="#000000" d="M112.38,-54C132.41,-54 154.74,-54 172.94,-54"/>
 <polygon fill="#000000" stroke="#000000" points="173.13,-57.5 183.13,-54 173.13,-50.5 173.13,-57.5"/>
-</g>
-<!-- proc~write_binary_stl_file -->
-<g id="proc~~cross~~CalledByGraph_node5" class="node">
-<title>proc~write_binary_stl_file</title>
-<g id="a_proc~~cross~~CalledByGraph_node5"><a xlink:href=".././proc/write_binary_stl_file.html" xlink:title="write_binary_stl_file">
-<polygon fill="#d9534f" stroke="#d9534f" points="117,-24 0,-24 0,0 117,0 117,-24"/>
-<text text-anchor="middle" x="58.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_binary_stl_file</text>
-</a>
-</g>
-</g>
-<!-- proc~write_binary_stl_file&#45;&gt;proc~normal -->
-<g id="proc~~cross~~CalledByGraph_edge5" class="edge">
-<title>proc~write_binary_stl_file&#45;&gt;proc~normal</title>
-<path fill="none" stroke="#000000" d="M102.48,-24.04C125.05,-30.36 152.39,-38.01 173.78,-44"/>
-<polygon fill="#000000" stroke="#000000" points="172.88,-47.38 183.45,-46.71 174.77,-40.64 172.88,-47.38"/>
-</g>
-<!-- proc~generate_circle -->
-<g id="proc~~cross~~CalledByGraph_node6" class="node">
-<title>proc~generate_circle</title>
-<g id="a_proc~~cross~~CalledByGraph_node6"><a xlink:href=".././proc/generate_circle.html" xlink:title="generate_circle">
-<polygon fill="#d9534f" stroke="#d9534f" points="106,-108 11,-108 11,-84 106,-84 106,-108"/>
-<text text-anchor="middle" x="58.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">generate_circle</text>
-</a>
-</g>
-</g>
-<!-- proc~generate_circle&#45;&gt;proc~axis_angle_rotation -->
-<g id="proc~~cross~~CalledByGraph_edge3" class="edge">
-<title>proc~generate_circle&#45;&gt;proc~axis_angle_rotation</title>
-<path fill="none" stroke="#000000" d="M106.14,-96C117.7,-96 130.31,-96 142.62,-96"/>
-<polygon fill="#000000" stroke="#000000" points="142.86,-99.5 152.86,-96 142.86,-92.5 142.86,-99.5"/>
 </g>
 </g>
 </svg>
@@ -439,34 +310,11 @@ private pure function cross(a, b) result(axb)
     </div></div></div></div>
       </div>
     </div>
-     
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -474,68 +322,53 @@ private pure function cross(a, b) result(axb)
   </div>
 </div>
 
-
-
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
-    
-    
     
     
 
     
     
-    
-    
-    
 
 
-    
-    
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">pure function </span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">axb</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">pure function </span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">axb</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">implicit none</span>
+<span class="w">    </span><span class="k">implicit none</span>
 
-<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">axb</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>
+<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">axb</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">b</span><span class="w"></span>
 
-    <span class="n">axb</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">axb</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">axb</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">axb</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">axb</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">axb</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">end function </span><span class="n">cross</span>
+<span class="w">    </span><span class="k">end function </span><span class="n">cross</span><span class="w"></span>
 </pre></div>
 
     </section>
     <br>
     
-    
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>stl-fortran was developed by Jacob Williams<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>stl-fortran was developed by Jacob Williams<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -563,14 +396,11 @@ private pure function cross(a, b) result(axb)
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

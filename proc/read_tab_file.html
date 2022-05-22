@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="STL-FORTRAN -- Fortran STL File I/O">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,54 +43,25 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../sourcefile/stl_module.f90.html">Source File</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/stl_module.f90.html">Source File</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -104,51 +70,29 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>read_tab_file
       <small>Subroutine</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
     title="11.4% of total for procedures.">59 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/stl_module.f90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/stl_module.f90.html'>stl_module.f90</a></li>
-    
      <li><a href='../module/stl_module.html'>stl_module</a></li>
-    
-  
      <li class="active">read_tab_file</li>
   </ol>
 </div>
@@ -164,32 +108,9 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -197,24 +118,14 @@
   </div>
 </div>
 
-
-
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-private subroutine read_tab_file(me, filename, istat)
+    <h2>private subroutine read_tab_file(me, filename, istat)</h2>
     
-    
-   
-</h2>
-    
-  
 
-
-    
     <p>Read a text vertex-facet file.</p>
 <h3>File Format</h3>
 <p>The file is a text file consisting of:</p>
@@ -246,100 +157,37 @@ private subroutine read_tab_file(me, filename, istat)
  5       131       197       132
   ...
 </code></pre></div>
-    
 
     <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-me~7"></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>me</strong></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-filename~3"></span>character(len=*),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>filename</strong></td><td><p>Vertex-facet file name</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-istat~3"></span>integer,</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>istat</strong></td><td><p><code>iostat</code> code (=0 if no errors)</p></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-    
-    
-    
-    
-     
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -347,145 +195,130 @@ private subroutine read_tab_file(me, filename, istat)
   </div>
 </div>
 
-
-
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
-    
-    
     
     
 
     
     
-    
-    
-    
 
 
-    
-    
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">read_tab_file</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span><span class="n">istat</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">read_tab_file</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span><span class="n">istat</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">implicit none</span>
+<span class="w">    </span><span class="k">implicit none</span>
 
-<span class="k">    class</span><span class="p">(</span><span class="n">stl_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">me</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">filename</span> <span class="c">!! Vertex-facet file name</span>
-    <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>         <span class="kd">::</span> <span class="n">istat</span>    <span class="c">!! `iostat` code (=0 if no errors)</span>
+<span class="k">    class</span><span class="p">(</span><span class="n">stl_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">me</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="c">!! Vertex-facet file name</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">istat</span><span class="w">    </span><span class="c">!! `iostat` code (=0 if no errors)</span>
 
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">iunit</span>  <span class="c">!! file unit</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">number_of_vertices</span> <span class="c">!! number of vertices in the file</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">number_of_plates</span>   <span class="c">!! number of plates defined in the file (three vertices)</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span> <span class="c">!! counter</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ii</span> <span class="c">!! vertex or plate index</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i1</span> <span class="c">!! 1st vertex index of plate</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i2</span> <span class="c">!! 2nd vertex index of plate</span>
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i3</span> <span class="c">!! 3rd vertex index of plate</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">v</span> <span class="c">!! vertices from the file</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span> <span class="c">!! x coordinate of vertex</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">y</span> <span class="c">!! y coordinate of vertex</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">z</span> <span class="c">!! z coordinate of vertex</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">iunit</span><span class="w">  </span><span class="c">!! file unit</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">number_of_vertices</span><span class="w"> </span><span class="c">!! number of vertices in the file</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">number_of_plates</span><span class="w">   </span><span class="c">!! number of plates defined in the file (three vertices)</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="c">!! counter</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="c">!! vertex or plate index</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="c">!! 1st vertex index of plate</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i2</span><span class="w"> </span><span class="c">!! 2nd vertex index of plate</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i3</span><span class="w"> </span><span class="c">!! 3rd vertex index of plate</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:,:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="c">!! vertices from the file</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="c">!! x coordinate of vertex</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="c">!! y coordinate of vertex</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="c">!! z coordinate of vertex</span>
 
-    <span class="c">!initialize:</span>
-    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span>
+<span class="w">    </span><span class="c">!initialize:</span>
+<span class="w">    </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span><span class="w"></span>
 
-    <span class="c">!open the file:</span>
-    <span class="k">open</span><span class="p">(</span><span class="n">newunit</span> <span class="o">=</span> <span class="n">iunit</span><span class="p">,&amp;</span>
-         <span class="k">file</span>    <span class="o">=</span> <span class="n">filename</span><span class="p">,&amp;</span>
-         <span class="n">action</span>  <span class="o">=</span> <span class="s1">&#39;READ&#39;</span><span class="p">,&amp;</span>
-         <span class="n">status</span>  <span class="o">=</span> <span class="s1">&#39;OLD&#39;</span><span class="p">,&amp;</span>
-         <span class="n">iostat</span>  <span class="o">=</span> <span class="n">istat</span><span class="p">)</span>
+<span class="w">    </span><span class="c">!open the file:</span>
+<span class="w">    </span><span class="k">open</span><span class="p">(</span><span class="n">newunit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iunit</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">         </span><span class="k">file</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">filename</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">         </span><span class="n">action</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;READ&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">         </span><span class="n">status</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;OLD&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">         </span><span class="n">iostat</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">istat</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 
-<span class="k">        read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span> <span class="n">number_of_vertices</span><span class="p">,</span> <span class="n">number_of_plates</span>
+<span class="k">        read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span><span class="w"> </span><span class="n">number_of_vertices</span><span class="p">,</span><span class="w"> </span><span class="n">number_of_plates</span><span class="w"></span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 
-<span class="k">            </span><span class="n">me</span><span class="p">%</span><span class="n">n_plates</span> <span class="o">=</span> <span class="n">number_of_plates</span>
-            <span class="k">allocate</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n_plates</span><span class="p">))</span>
-            <span class="k">allocate</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">number_of_vertices</span><span class="p">))</span>
+<span class="k">            </span><span class="n">me</span><span class="p">%</span><span class="n">n_plates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_of_plates</span><span class="w"></span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n_plates</span><span class="p">))</span><span class="w"></span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">v</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">number_of_vertices</span><span class="p">))</span><span class="w"></span>
 
-            <span class="c">! first accumulate the vertex coordinates:</span>
-            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">number_of_vertices</span>
+<span class="w">            </span><span class="c">! first accumulate the vertex coordinates:</span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">number_of_vertices</span><span class="w"></span>
 
-                <span class="k">read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span> <span class="n">ii</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+<span class="w">                </span><span class="k">read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span><span class="w"> </span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"></span>
 
-                <span class="c">!get the data:</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">                    </span><span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span>
-                    <span class="n">v</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">y</span>
-                    <span class="n">v</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">z</span>
-                <span class="k">else</span>
-<span class="k">                    write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39;Error reading vertex from file: &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-                    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span>
-                    <span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span>
-                    <span class="k">return</span>
+<span class="w">                </span><span class="c">!get the data:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="w">                    </span><span class="n">v</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+<span class="w">                    </span><span class="n">v</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">z</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span>
+<span class="k">                    write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Error reading vertex from file: &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span><span class="w"></span>
+<span class="w">                    </span><span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="k">return</span>
 <span class="k">                end if</span>
 
-<span class="k">            end do</span>
+<span class="k">            end do</span><span class="w"></span>
 
-            <span class="c">! now, read the plate vertex indices, and add them to the class</span>
-            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">number_of_plates</span>
+<span class="w">            </span><span class="c">! now, read the plate vertex indices, and add them to the class</span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">number_of_plates</span><span class="w"></span>
 
-                <span class="k">read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span> <span class="n">ii</span><span class="p">,</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="n">i3</span>
+<span class="w">                </span><span class="k">read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span><span class="w"> </span><span class="n">ii</span><span class="p">,</span><span class="n">i1</span><span class="p">,</span><span class="n">i2</span><span class="p">,</span><span class="n">i3</span><span class="w"></span>
 
-                <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">                    </span><span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v1</span> <span class="o">=</span> <span class="n">v</span><span class="p">(:,</span><span class="n">i1</span><span class="p">)</span>
-                    <span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v2</span> <span class="o">=</span> <span class="n">v</span><span class="p">(:,</span><span class="n">i2</span><span class="p">)</span>
-                    <span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v3</span> <span class="o">=</span> <span class="n">v</span><span class="p">(:,</span><span class="n">i3</span><span class="p">)</span>
-                <span class="k">else</span>
-<span class="k">                    write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39;Error reading plate from file: &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-                    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span>
-                    <span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span>
-                    <span class="k">return</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">(:,</span><span class="n">i1</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">(:,</span><span class="n">i2</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="n">me</span><span class="p">%</span><span class="n">plates</span><span class="p">(</span><span class="n">i</span><span class="p">)%</span><span class="n">v3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">(:,</span><span class="n">i3</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span>
+<span class="k">                    write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Error reading plate from file: &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span><span class="w"></span>
+<span class="w">                    </span><span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="k">return</span>
 <span class="k">                end if</span>
 
-<span class="k">            end do</span>
+<span class="k">            end do</span><span class="w"></span>
 
-            <span class="c">! close the file:</span>
-            <span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span>
-            <span class="k">deallocate</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="w">            </span><span class="c">! close the file:</span>
+<span class="w">            </span><span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">deallocate</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"></span>
 
-        <span class="k">else</span>
-<span class="k">            write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="s1">&#39;Error reading first line from file: &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-            <span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span>
-        <span class="k">end if</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Error reading first line from file: &#39;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">close</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
 
 <span class="k">    end if</span>
 
-<span class="k">    end subroutine </span><span class="n">read_tab_file</span>
+<span class="k">    end subroutine </span><span class="n">read_tab_file</span><span class="w"></span>
 </pre></div>
 
     </section>
     <br>
     
-    
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>stl-fortran was developed by Jacob Williams<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>stl-fortran was developed by Jacob Williams<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -513,14 +346,11 @@ private subroutine read_tab_file(me, filename, istat)
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

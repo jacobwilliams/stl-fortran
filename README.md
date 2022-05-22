@@ -5,6 +5,13 @@
 
 Fortran code for reading and writing STL (STereoLithography) files.
 
+### Status
+
+[![GitHub release](https://img.shields.io/github/release/jacobwilliams/stl-fortran.svg)](https://github.com/jacobwilliams/stl-fortran/releases/latest)
+[![Build Status](https://github.com/jacobwilliams/stl-fortran/actions/workflows/CI.yml/badge.svg)](https://github.com/jacobwilliams/stl-fortran/actions)
+[![codecov](https://codecov.io/gh/jacobwilliams/stl-fortran/branch/master/graph/badge.svg)](https://codecov.io/gh/jacobwilliams/stl-fortran)
+[![last-commit](https://img.shields.io/github/last-commit/jacobwilliams/stl-fortran)](https://github.com/jacobwilliams/stl-fortran/commits/master)
+
 ### Example
 
 ```fortran
@@ -27,11 +34,17 @@ Fortran code for reading and writing STL (STereoLithography) files.
 
 ### Compiling
 
-A [Fortran Package Manager](https://github.com/fortran-lang/fpm) manifest file is included, so that the library and tests cases can be compiled with FPM. For example:
+A [Fortran Package Manager](https://github.com/fortran-lang/fpm) manifest file is included, so that the library and test cases can be compiled with FPM. For example:
 
 ```
 fpm build --profile release
 fpm test --profile release
+```
+
+To use `stl-fortran` within your fpm project, add the following to your `fpm.toml` file:
+```toml
+[dependencies]
+stl-fortran = { git="https://github.com/jacobwilliams/stl-fortran.git" }
 ```
 
 To generate the documentation using [FORD](https://github.com/Fortran-FOSS-Programmers/ford), run: ```ford stl-fortran.md```

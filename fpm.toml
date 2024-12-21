@@ -1,6 +1,6 @@
 name = "stl-fortran"
 author = "Jacob Williams"
-copyright  = "Copyright (c) 2020-2022, Jacob Williams"
+copyright  = "Copyright (c) 2020-2024, Jacob Williams"
 license = "BSD-3"
 description = "Fortran STL File I/O"
 homepage = "https://github.com/jacobwilliams/stl-fortran"

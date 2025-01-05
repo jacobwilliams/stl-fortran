@@ -1,182 +1,209 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="STL-FORTRAN -- Fortran STL File I/O">
+      <meta name="description" content="STL-FORTRAN -- Fortran STL File I/O">
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
     <title>stl_module &ndash; stl-fortran</title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
-
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
           <a class="navbar-brand" href="../index.html">stl-fortran </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-              <a href="#" class="dropdown-toggle"
-              data-toggle="dropdown" role="button"
-              aria-haspopup="true"
-     aria-expanded="false">Contents <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="../sourcefile/stl_module.f90.html">Source File</a></li>
-            <li><a href="../lists/modules.html">Modules</a></li>
-            <li><a href="../lists/procedures.html">Procedures</a></li>
-                   <li><a href="../lists/types.html">Derived Types</a></li>
-       
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../sourcefile/stl_module.f90.html">Source File</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
             </ul>
-        
-            </li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/stl_module.f90.html">Source File</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-          </ul>
-        <form action="../search.html" class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
         </div>
-<!--
-        <button type="submit" class="btn btn-default">Submit</button>
--->
-        </form>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+      </nav>
+    </div>
 
     <div class="container">
   <div class="row">
-    <h1>stl_module 
-    <small>Module</small>
+    <h1>stl_module
+      <small>Module</small>
+      
     </h1>
-    <div class="row">
-  <div class="col-lg-12">
-<div class="well well-sm">
-  <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     <li><i class="fa fa-list-ol"></i>
-       <a data-toggle="tooltip"
-    data-placement="bottom" data-html="true"
-    title="100.0% of total for modules and submodules.">559 statements</a>
-     </li> 
-    <li><i class="fa fa-code"></i><a href="../src/stl_module.f90"> Source File</a></li>
-  </ul>
-  <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/stl_module.f90.html'>stl_module.f90</a></li>
-     <li class="active">stl_module</li>
-  </ol>
-</div>
-</div>
-</div>
-<script>
-  $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="100.0% of total for modules and submodules.">559 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/stl_module.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/stl_module.f90.html'>stl_module.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">stl_module</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
 
   </div>
-  
+
   <div class="row">
-    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    <div id="sidebar">
-  <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/stl_module.html#variable-zero">zero</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-one">one</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-deg2rad">deg2rad</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-x_unit">x_unit</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-y_unit">y_unit</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-z_unit">z_unit</a>
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/stl_module.html#variable-zero">zero</a>
+            <a class="list-group-item" href="../module/stl_module.html#variable-one">one</a>
+            <a class="list-group-item" href="../module/stl_module.html#variable-deg2rad">deg2rad</a>
+            <a class="list-group-item" href="../module/stl_module.html#variable-x_unit">x_unit</a>
+            <a class="list-group-item" href="../module/stl_module.html#variable-y_unit">y_unit</a>
+            <a class="list-group-item" href="../module/stl_module.html#variable-z_unit">z_unit</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
-  <div id="types-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/stl_module.html#type-plate">plate</a>
-      <a class="list-group-item" href="../module/stl_module.html#type-stl_file">stl_file</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
-  <div id="funcs-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/stl_module.html#proc-compute_vertex_scale">compute_vertex_scale</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-perpendicular">perpendicular</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-normal">normal</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-unit">unit</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-cross">cross</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-spherical_to_cartesian">spherical_to_cartesian</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-axis_angle_rotation">axis_angle_rotation</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-vector_projection">vector_projection</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-vector_projection_on_plane">vector_projection_on_plane</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/stl_module.html#proc-destroy_stl_file">destroy_stl_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-set_chunk_size">set_chunk_size</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_plate">add_plate</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-write_binary_stl_file">write_binary_stl_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-read_binary_stl_file">read_binary_stl_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-read_tab_file">read_tab_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-write_ascii_stl_file">write_ascii_stl_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-shift_mesh">shift_mesh</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_sphere">add_sphere</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_cylinder">add_cylinder</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_cone">add_cone</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_axes">add_axes</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_arrow">add_arrow</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-generate_circle">generate_circle</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_curve">add_curve</a>
-    </div>
-  </div>
-</div>
 
-</div>
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/stl_module.html#type-plate">plate</a>
+            <a class="list-group-item" href="../module/stl_module.html#type-stl_file">stl_file</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/stl_module.html#proc-compute_vertex_scale">compute_vertex_scale</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-perpendicular">perpendicular</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-normal">normal</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-unit">unit</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-cross">cross</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-spherical_to_cartesian">spherical_to_cartesian</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-axis_angle_rotation">axis_angle_rotation</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-vector_projection">vector_projection</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-vector_projection_on_plane">vector_projection_on_plane</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/stl_module.html#proc-destroy_stl_file">destroy_stl_file</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-set_chunk_size">set_chunk_size</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-add_plate">add_plate</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-write_binary_stl_file">write_binary_stl_file</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-read_binary_stl_file">read_binary_stl_file</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-read_tab_file">read_tab_file</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-write_ascii_stl_file">write_ascii_stl_file</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-shift_mesh">shift_mesh</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-add_sphere">add_sphere</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-add_cylinder">add_cylinder</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-add_cone">add_cone</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-add_axes">add_axes</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-add_arrow">add_arrow</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-generate_circle">generate_circle</a>
+            <a class="list-group-item" href="../module/stl_module.html#proc-add_curve">add_curve</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
 
     </div>
-    
+
     <div class="col-md-9" id='text'>
-    <p>STL (STereoLithography) file library.</p>
+      <p>STL (STereoLithography) file library.</p>
 <h3>Author</h3>
 <ul>
 <li>Jacob Williams, Jan 12, 2020.</li>
@@ -189,19 +216,18 @@
 <ul>
 <li>https://en.wikipedia.org/wiki/STL_(file_format)</li>
 </ul>
-<br>        <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Uses</h3>
-      </div>
-      <ul class="list-group">
-      <li class="list-group-item">
-  <ul class="list-inline">
-    <li><a href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fC_005fBINDING.html">iso_c_binding</a></li>
-    <li><a href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html">iso_fortran_env</a></li>
-  </ul>
-      </li>
-      <li class="list-group-item">
-  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_c_binding'>iso_c_binding</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -218,41 +244,51 @@
 <polygon fill="none" stroke="black" points="200,-45 130,-45 130,-21 200,-21 200,-45"/>
 <text text-anchor="middle" x="165" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">stl_module</text>
 </g>
-<!-- iso_fortran_env -->
-<g id="module~~stl_module~~UsesGraph_node2" class="node">
-<title>iso_fortran_env</title>
-<g id="a_module~~stl_module~~UsesGraph_node2"><a xlink:href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html" xlink:title="iso_fortran_env">
-<polygon fill="#337ab7" stroke="#337ab7" points="94,-66 0,-66 0,-42 94,-42 94,-66"/>
-<text text-anchor="middle" x="47" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
-</a>
-</g>
-</g>
-<!-- module~stl_module&#45;&gt;iso_fortran_env -->
-<g id="module~~stl_module~~UsesGraph_edge1" class="edge">
-<title>module~stl_module&#45;&gt;iso_fortran_env</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M129.82,-39.19C121.85,-40.63 113.15,-42.21 104.49,-43.77"/>
-<polygon fill="#000000" stroke="#000000" points="103.62,-40.37 94.4,-45.6 104.86,-47.26 103.62,-40.37"/>
-</g>
 <!-- iso_c_binding -->
-<g id="module~~stl_module~~UsesGraph_node3" class="node">
+<g id="module~~stl_module~~UsesGraph_node2" class="node">
 <title>iso_c_binding</title>
-<g id="a_module~~stl_module~~UsesGraph_node3"><a xlink:href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fC_005fBINDING.html" xlink:title="iso_c_binding">
-<polygon fill="#337ab7" stroke="#337ab7" points="89,-24 5,-24 5,0 89,0 89,-24"/>
-<text text-anchor="middle" x="47" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+<g id="a_module~~stl_module~~UsesGraph_node2"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="89,-66 5,-66 5,-42 89,-42 89,-66"/>
+<text text-anchor="middle" x="47" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
 </a>
 </g>
 </g>
 <!-- module~stl_module&#45;&gt;iso_c_binding -->
-<g id="module~~stl_module~~UsesGraph_edge2" class="edge">
+<g id="module~~stl_module~~UsesGraph_edge1" class="edge">
 <title>module~stl_module&#45;&gt;iso_c_binding</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M129.82,-26.81C120.3,-25.09 109.74,-23.18 99.46,-21.32"/>
-<polygon fill="#000000" stroke="#000000" points="99.78,-17.82 89.32,-19.48 98.53,-24.71 99.78,-17.82"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M129.82,-39.19C120.3,-40.91 109.74,-42.82 99.46,-44.68"/>
+<polygon fill="#000000" stroke="#000000" points="98.53,-41.29 89.32,-46.52 99.78,-48.18 98.53,-41.29"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~stl_module~~UsesGraph_node3" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~stl_module~~UsesGraph_node3"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="94,-24 0,-24 0,0 94,0 94,-24"/>
+<text text-anchor="middle" x="47" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~stl_module&#45;&gt;iso_fortran_env -->
+<g id="module~~stl_module~~UsesGraph_edge2" class="edge">
+<title>module~stl_module&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M129.82,-26.81C121.85,-25.37 113.15,-23.79 104.49,-22.23"/>
+<polygon fill="#000000" stroke="#000000" points="104.86,-18.74 94.4,-20.4 103.62,-25.63 104.86,-18.74"/>
 </g>
 </g>
 </svg>
-</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
-    <p>Nodes of different colours represent the following: </p>
-    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
@@ -302,1321 +338,2668 @@
 </g>
 </svg>
 
-    
-    <p>Solid arrows point from a submodule to the (sub)module which it is
-    descended from. Dashed arrows point from a module or program unit to 
-    modules which it uses.
-    </p>
-    </div></div></div></div>
-      </li>
-      </ul>
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
     </div>
 
-    
-    <br>
+      
+      <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-      <h3>Contents</h3>
- 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/stl_module.html#variable-zero">zero</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-one">one</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-deg2rad">deg2rad</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-x_unit">x_unit</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-y_unit">y_unit</a>
-      <a class="list-group-item" href="../module/stl_module.html#variable-z_unit">z_unit</a>
+
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-zero"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>zero</strong></td>
+<td> =</td>
+                <td>0.0_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-one"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>one</strong></td>
+<td> =</td>
+                <td>1.0_wp</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-deg2rad"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>deg2rad</strong></td>
+<td> =</td>
+                <td>acos(-1.0_wp)/180.0_wp</td>
+            <td>
+                <p>degrees to radians</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x_unit"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>x_unit</strong></td>
+<td> =</td>
+                <td>[one, zero, zero]</td>
+            <td>
+                <p>x-axis unit vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y_unit"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>y_unit</strong></td>
+<td> =</td>
+                <td>[zero, one, zero]</td>
+            <td>
+                <p>y-axis unit vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z_unit"></span>
+              real(kind=wp),
+            </td>
+              <td>private,</td>
+            <td>
+parameter,               dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>z_unit</strong></td>
+<td> =</td>
+                <td>[zero, zero, one]</td>
+            <td>
+                <p>z-axis unit vector</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-plate"></span>
+      <h3>
+        type, private&nbsp;::&nbsp;
+        <a href='../type/plate.html'>plate</a>
+        
+      </h3>
     </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
-  <div id="types-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/stl_module.html#type-plate">plate</a>
-      <a class="list-group-item" href="../module/stl_module.html#type-stl_file">stl_file</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
-  <div id="funcs-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../module/stl_module.html#proc-compute_vertex_scale">compute_vertex_scale</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-perpendicular">perpendicular</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-normal">normal</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-unit">unit</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-cross">cross</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-spherical_to_cartesian">spherical_to_cartesian</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-axis_angle_rotation">axis_angle_rotation</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-vector_projection">vector_projection</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-vector_projection_on_plane">vector_projection_on_plane</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
-  <div class="list-group">
-    <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../module/stl_module.html#proc-destroy_stl_file">destroy_stl_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-set_chunk_size">set_chunk_size</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_plate">add_plate</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-write_binary_stl_file">write_binary_stl_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-read_binary_stl_file">read_binary_stl_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-read_tab_file">read_tab_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-write_ascii_stl_file">write_ascii_stl_file</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-shift_mesh">shift_mesh</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_sphere">add_sphere</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_cylinder">add_cylinder</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_cone">add_cone</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_axes">add_axes</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_arrow">add_arrow</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-generate_circle">generate_circle</a>
-      <a class="list-group-item" href="../module/stl_module.html#proc-add_curve">add_curve</a>
-    </div>
-  </div>
-</div>
-
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
-
-
-    <section>
-    <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-zero"></span>real(kind=wp),</td>
-<td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>zero</strong></td><td> =</td><td>0.0_wp</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-one"></span>real(kind=wp),</td>
-<td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>one</strong></td><td> =</td><td>1.0_wp</td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-deg2rad"></span>real(kind=wp),</td>
-<td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>deg2rad</strong></td><td> =</td><td>acos(-1.0_wp)/180.0_wp</td><td><p>degrees to radians</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-x_unit"></span>real(kind=wp),</td>
-<td>private,</td>  <td>parameter, dimension(3)</td><td>::</td>
-  <td><strong>x_unit</strong></td><td> =</td><td>[one, zero, zero]</td><td><p>x-axis unit vector</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-y_unit"></span>real(kind=wp),</td>
-<td>private,</td>  <td>parameter, dimension(3)</td><td>::</td>
-  <td><strong>y_unit</strong></td><td> =</td><td>[zero, one, zero]</td><td><p>y-axis unit vector</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-z_unit"></span>real(kind=wp),</td>
-<td>private,</td>  <td>parameter, dimension(3)</td><td>::</td>
-  <td><strong>z_unit</strong></td><td> =</td><td>[zero, zero, one]</td><td><p>z-axis unit vector</p></td>
-</tr>
-</tbody>
-</table>
-
-    </section>
-    <br>
-    
-    
-
-    
-    <section>
-     <h2>Derived Types</h2>
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="type-plate"></span><h3>type, private :: <a href='../type/plate.html'>plate</a>  </h3></div>
-  <div class="panel-body">
-    <p>a 3D triangular plate.
+    <div class="card-body">
+      <p>a 3D triangular plate.
 [note that the order of the vertices defines the
 surface normal via the right-hand rule]</p>
-     <h4>Components</h4>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-v1"></span>real(kind=wp),</td>
-<td>private,</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v1</strong></td><td> =</td><td>zero</td><td><p>first vertex</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-v2"></span>real(kind=wp),</td>
-<td>private,</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v2</strong></td><td> =</td><td>zero</td><td><p>second vertex</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-v3"></span>real(kind=wp),</td>
-<td>private,</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v3</strong></td><td> =</td><td>zero</td><td><p>third vertex</p></td>
-</tr>
-</tbody>
-</table>
 
-     
-  </div>
-</div>
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v1"></span>
+              real(kind=wp),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v1</strong></td>
+<td> =</td>
+                <td>zero</td>
+            <td>
+<p>first vertex</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v2"></span>
+              real(kind=wp),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v2</strong></td>
+<td> =</td>
+                <td>zero</td>
+            <td>
+<p>second vertex</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v3"></span>
+              real(kind=wp),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v3</strong></td>
+<td> =</td>
+                <td>zero</td>
+            <td>
+<p>third vertex</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
 
-     <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="type-stl_file"></span><h3>type, public :: <a href='../type/stl_file.html'>stl_file</a>  </h3></div>
-  <div class="panel-body">
-    <p>the main class for STL file I/O.</p>
-     <h4>Components</h4>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-n_plates"></span>integer,</td>
-<td>public</td>  <td></td><td>::</td>
-  <td><strong>n_plates</strong></td><td> =</td><td>0</td><td><p>number of plates</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-chunk_size"></span>integer,</td>
-<td>public</td>  <td></td><td>::</td>
-  <td><strong>chunk_size</strong></td><td> =</td><td>1000</td><td><p>expand <code>plates</code> array in chunks of this size</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-plates"></span>type(<a href='../type/plate.html'>plate</a>),</td>
-<td>public,</td>  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>plates</strong></td><td></td><td></td><td><p>the array of plates</p></td>
-</tr>
-</tbody>
-</table>
 
-     
-     <h4>Type-Bound Procedures</h4>
-      <table class="table table-striped varlist">
-      <tbody>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-write_ascii_stl_file'>write_ascii_stl_file</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-write_binary_stl_file'>write_binary_stl_file</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-read'>read</a></strong>  => read_binary_stl_file </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-read_tab_file'>read_tab_file</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-destroy'>destroy</a></strong>  => destroy_stl_file </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-add_plate'>add_plate</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-add_sphere'>add_sphere</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-add_cylinder'>add_cylinder</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-add_curve'>add_curve</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-add_cone'>add_cone</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-add_arrow'>add_arrow</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-add_axes'>add_axes</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-shift_mesh'>shift_mesh</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-set_chunk_size'>set_chunk_size</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-generate_circle'>generate_circle</a></strong>  </td>
-       <td></td></tr>
-       <tr><td>procedure, public :: <strong><a href='../type/stl_file.html#boundprocedure-compute_vertex_scale'>compute_vertex_scale</a></strong>  </td>
-       <td></td></tr>
-       </tbody>
-       </table>
-  </div>
-</div>
 
-    </section>
-  <br>
-    
- 
-    <section>
-    <h2>Functions</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-compute_vertex_scale"></span><h3>private pure function <a href='../proc/compute_vertex_scale.html'>compute_vertex_scale</a>(me, bounding_box) result(scale)</h3></div>
-  <div class="panel-body">
-       
-<p>Compute the scale factor for the vertices (for writing to a file).</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>bounding_box</strong></td><td><p>scale vertices so that model fits in a
-box of this size (if &lt;=0, no scaling is done)</p></td>
-</tr>
-</tbody>
-</table>
 
-<h4>Return Value <small>real(kind=wp)</small></h4>  <p>scale factor</p>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-perpendicular"></span><h3>private pure function <a href='../proc/perpendicular.html'>perpendicular</a>(v1, v2) result(is_parallel)</h3></div>
-  <div class="panel-body">
-       
-<p>Returns true if the two vectors are perpendicular.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(:)</td><td>::</td>
-  <td><strong>v1</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(:)</td><td>::</td>
-  <td><strong>v2</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>logical</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-normal"></span><h3>private pure function <a href='../proc/normal.html'>normal</a>(v1, v2, v3) result(n)</h3></div>
-  <div class="panel-body">
-       
-<p>Normal vector for the plate (computed using right hand rule).</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v1</strong></td><td><p>first vertex of the triangle [x,y,z]</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v2</strong></td><td><p>second vertex of the triangle [x,y,z]</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v3</strong></td><td><p>third vertex of the triangle [x,y,z]</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=wp),dimension(3)</small></h4>  <p>surface normal vector</p>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-unit"></span><h3>private pure function <a href='../proc/unit.html'>unit</a>(r) result(rhat)</h3></div>
-  <div class="panel-body">
-       
-<p>3x1 Unit vector.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>r</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=wp),dimension(3)</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-cross"></span><h3>private pure function <a href='../proc/cross.html'>cross</a>(a, b) result(axb)</h3></div>
-  <div class="panel-body">
-       
-<p>Vector cross product.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>a</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>b</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=wp),dimension(3)</small></h4>  
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-spherical_to_cartesian"></span><h3>private pure function <a href='../proc/spherical_to_cartesian.html'>spherical_to_cartesian</a>(r, alpha, beta) result(rvec)</h3></div>
-  <div class="panel-body">
-       
-<p>Convert spherical (r,alpha,beta) to Cartesian (x,y,z).</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>r</strong></td><td><p>magnitude</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>alpha</strong></td><td><p>right ascension [deg]</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>beta</strong></td><td><p>declination [deg]</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=wp),dimension(3)</small></h4>  <p>[x,y,z] vector</p>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-axis_angle_rotation"></span><h3>private pure function <a href='../proc/axis_angle_rotation.html'>axis_angle_rotation</a>(v, k, theta) result(vrot)</h3></div>
-  <div class="panel-body">
-         <dl class="dl-horizontal">
-    <dt>Author</dt><dd>Jacob Williams</dd>
-    <dt>Date</dt><dd>7/20/2014</dd>
-  </dl>
-
-<p>Rotate a 3x1 vector in space, given an axis and angle of rotation.</p><a href="../proc/axis_angle_rotation.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v</strong></td><td><p>vector to rotate</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>k</strong></td><td><p>rotation axis</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>theta</strong></td><td><p>rotation angle [deg]</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=wp),dimension(3)</small></h4>  <p>result</p>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-vector_projection"></span><h3>private pure function <a href='../proc/vector_projection.html'>vector_projection</a>(a, b) result(c)</h3></div>
-  <div class="panel-body">
-       
-<p>The projection of one vector onto another vector.</p><a href="../proc/vector_projection.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(:)</td><td>::</td>
-  <td><strong>a</strong></td><td><p>the original vector</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(size(a))</td><td>::</td>
-  <td><strong>b</strong></td><td><p>the vector to project on to</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=wp),dimension(size(a))</small></h4>  <p>the projection of a onto b</p>
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-vector_projection_on_plane"></span><h3>private pure function <a href='../proc/vector_projection_on_plane.html'>vector_projection_on_plane</a>(a, b) result(c)</h3></div>
-  <div class="panel-body">
-       
-<p>Project a vector onto a plane.</p><a href="../proc/vector_projection_on_plane.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>a</strong></td><td><p>the original vector</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>b</strong></td><td><p>the plane to project on to (a normal vector)</p></td>
-</tr>
-</tbody>
-</table>
-
-<h4>Return Value <small>real(kind=wp),dimension(3)</small></h4>  <p>the projection of a onto the b plane</p>
-
-  </div>
-  </div>
-
-    </section>
-    <br>
-
-    <section>
-    <h2>Subroutines</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-destroy_stl_file"></span><h3>private subroutine <a href='../proc/destroy_stl_file.html'>destroy_stl_file</a>(me)</h3></div>
-  <div class="panel-body">
-       
-<p>Destroy an <code>stl_file</code>.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-set_chunk_size"></span><h3>private subroutine <a href='../proc/set_chunk_size.html'>set_chunk_size</a>(me, chunk_size)</h3></div>
-  <div class="panel-body">
-       
-<p>Set the chunk size in the class.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>chunk_size</strong></td><td><p>must be &gt;0</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_plate"></span><h3>private subroutine <a href='../proc/add_plate.html'>add_plate</a>(me, v1, v2, v3)</h3></div>
-  <div class="panel-body">
-       
-<p>Add a plate to the class.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v1</strong></td><td><p>first vertex</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v2</strong></td><td><p>second vertex</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v3</strong></td><td><p>third vertex</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_binary_stl_file"></span><h3>private subroutine <a href='../proc/write_binary_stl_file.html'>write_binary_stl_file</a>(me, filename, istat, bounding_box)</h3></div>
-  <div class="panel-body">
-       
-<p>Generate a binary STL file.</p><a href="../proc/write_binary_stl_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>filename</strong></td><td><p>STL file name</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>istat</strong></td><td><p><code>iostat</code> code (=0 if no errors)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>bounding_box</strong></td><td><p>scale vertices so that model fits in a
-box of this size (if &lt;=0, no scaling is done)</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-read_binary_stl_file"></span><h3>private subroutine <a href='../proc/read_binary_stl_file.html'>read_binary_stl_file</a>(me, filename, istat)</h3></div>
-  <div class="panel-body">
-       
-<p>Read a binary STL file.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>filename</strong></td><td><p>STL file name</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>istat</strong></td><td><p><code>iostat</code> code (=0 if no errors)</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-read_tab_file"></span><h3>private subroutine <a href='../proc/read_tab_file.html'>read_tab_file</a>(me, filename, istat)</h3></div>
-  <div class="panel-body">
-       
-<p>Read a text vertex-facet file.</p><a href="../proc/read_tab_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>filename</strong></td><td><p>Vertex-facet file name</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>istat</strong></td><td><p><code>iostat</code> code (=0 if no errors)</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-write_ascii_stl_file"></span><h3>private subroutine <a href='../proc/write_ascii_stl_file.html'>write_ascii_stl_file</a>(me, filename, modelname, istat, bounding_box)</h3></div>
-  <div class="panel-body">
-       
-<p>Generate an ascii STL file.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>filename</strong></td><td><p>STL file name</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>modelname</strong></td><td><p>the solid name (should not contain spaces)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>istat</strong></td><td><p><code>iostat</code> code (=0 if no errors)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>bounding_box</strong></td><td><p>scale vertices so that model fits in a
-box of this size (if &lt;=0, no scaling is done)</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-shift_mesh"></span><h3>private subroutine <a href='../proc/shift_mesh.html'>shift_mesh</a>(me)</h3></div>
-  <div class="panel-body">
-       
-<p>Shift the vertex coordinates so that there are no non-positive components.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_sphere"></span><h3>private subroutine <a href='../proc/add_sphere.html'>add_sphere</a>(me, center, radius, num_lat_points, num_lon_points)</h3></div>
-  <div class="panel-body">
-       
-<p>Add a sphere to an STL file.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>center</strong></td><td><p>coordinates of sphere center [x,y,z]</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>radius</strong></td><td><p>radius of the sphere</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>num_lat_points</strong></td><td><p>number of latitude points (not counting poles)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>num_lon_points</strong></td><td><p>number of longitude points</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_cylinder"></span><h3>private subroutine <a href='../proc/add_cylinder.html'>add_cylinder</a>(me, v1, v2, radius, num_points, initial_cap, final_cap, initial_normal, final_normal, final_normal_used, initial_vector, final_initial_vector_used)</h3></div>
-  <div class="panel-body">
-       
-<p>Add a cylinder to an STL file.</p><a href="../proc/add_cylinder.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v1</strong></td><td><p>coordinates of initial point</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v2</strong></td><td><p>coordinates of final point</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>radius</strong></td><td><p>radius of the cylinder</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>num_points</strong></td><td><p>number of point on the circle (&gt;=3)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>initial_cap</strong></td><td><p>add a cap plate to the initial point</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>final_cap</strong></td><td><p>add a cap plate to the final point</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>initial_normal</strong></td><td><p>outward normal vector for initial circle</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>final_normal</strong></td><td><p>outward normal vector for final circle</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(out),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>final_normal_used</strong></td><td><p>outward normal vector for final circle
-actually used</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>initial_vector</strong></td><td><p>vector to use to generate the initial
-circle (x_unit by default)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(out),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>final_initial_vector_used</strong></td><td><p>the initial vector used for the final
-cap to generate the points</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_cone"></span><h3>private subroutine <a href='../proc/add_cone.html'>add_cone</a>(me, v1, v2, radius, num_points, initial_cap, initial_normal)</h3></div>
-  <div class="panel-body">
-       
-<p>Add a cone to an STL file.</p><a href="../proc/add_cone.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v1</strong></td><td><p>coordinates of initial point (bottom of the cone)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v2</strong></td><td><p>coordinates of final point (point of the cone)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>radius</strong></td><td><p>radius of the cone (the bottom plate)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>num_points</strong></td><td><p>number of point on the circle (&gt;=3)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>initial_cap</strong></td><td><p>add a cap plate to the initial point (bottom)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>initial_normal</strong></td><td><p>outward normal vector for initial plate (bottom)</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_axes"></span><h3>private subroutine <a href='../proc/add_axes.html'>add_axes</a>(me, origin, vx, vy, vz, radius, num_points, arrowhead_radius_factor, arrowhead_length_factor)</h3></div>
-  <div class="panel-body">
-       
-<p>Add x,y,z axes to an STL file.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>origin</strong></td><td><p>coordinates of the origin of the axes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>vx</strong></td><td><p>x axis vector</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>vy</strong></td><td><p>y axis vector</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>vz</strong></td><td><p>z axis vector</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>radius</strong></td><td><p>radius of the cylinder</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>num_points</strong></td><td><p>number of point on the circle (&gt;=3)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>arrowhead_radius_factor</strong></td><td><p>arrowhead cone radius factor
-(multiple of cylinder radius)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>arrowhead_length_factor</strong></td><td><p>arrowhead tip length factor
-(multiple of vector length)</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_arrow"></span><h3>private subroutine <a href='../proc/add_arrow.html'>add_arrow</a>(me, origin, v, radius, num_points, arrowhead_radius_factor, arrowhead_length_factor)</h3></div>
-  <div class="panel-body">
-       
-<p>Add an arrow to an STL file.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>origin</strong></td><td><p>coordinates of the origin of the axes</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>v</strong></td><td><p>vector</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>radius</strong></td><td><p>radius of the cylinder</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>num_points</strong></td><td><p>number of point on the circle (&gt;=3)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>arrowhead_radius_factor</strong></td><td><p>arrowhead cone radius factor
-(multiple of cylinder radius)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>arrowhead_length_factor</strong></td><td><p>arrowhead tip length factor
-(multiple of vector length)</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-generate_circle"></span><h3>private subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me, c, radius, n, nc, add_circle, circle, initial_vector, cw)</h3></div>
-  <div class="panel-body">
-       
-<p>Generate the points in a circle, and optionally add it as a plate.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>c</strong></td><td><p>center of the circle</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>radius</strong></td><td><p>radius of the cylinder</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>n</strong></td><td><p>normal vector to the circle</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>nc</strong></td><td><p>number of points on the circle
-(must be at least 3)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>add_circle</strong></td><td><p>to also add to the circle as a plate</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(out),</td>
-  <td></td>  <td>dimension(:,:), allocatable</td><td>::</td>
-  <td><strong>circle</strong></td><td><p>points on the circle</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>initial_vector</strong></td><td><p>vector to use to generate the initial
-circle (x_unit by default)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>cw</strong></td><td><p>generate the points in the clockwise
-direction abound n (default is false)</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-add_curve"></span><h3>private subroutine <a href='../proc/add_curve.html'>add_curve</a>(me, x, y, z, radius, num_points, initial_cap, initial_normal, final_cap, final_normal, initial_vector)</h3></div>
-  <div class="panel-body">
-       
-<p>Add a curve to an STL file.</p><a href="../proc/add_curve.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/stl_file.html'>stl_file</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(:)</td><td>::</td>
-  <td><strong>x</strong></td><td><p>x coordinate array</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(:)</td><td>::</td>
-  <td><strong>y</strong></td><td><p>y coordinate array</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td></td>  <td>dimension(:)</td><td>::</td>
-  <td><strong>z</strong></td><td><p>z coordinate array</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>radius</strong></td><td><p>radius of the cylinder</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer,</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>num_points</strong></td><td><p>number of point on the cylinder perimeter</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>initial_cap</strong></td><td><p>add a cap plate to the initial point</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>initial_normal</strong></td><td><p>outward normal vector for initial circle</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical,</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>final_cap</strong></td><td><p>add a cap plate to the final point</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>final_normal</strong></td><td><p>outward normal vector for final circle</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>real(kind=wp),</td>
-<td>intent(in),</td>
-  <td>optional</td>  <td>dimension(3)</td><td>::</td>
-  <td><strong>initial_vector</strong></td><td><p>vector to use to generate the first circle (x_unit by default)</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-    </section>    
-    <br>
-    
     </div>
   </div>
 
-    <hr>    
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-stl_file"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/stl_file.html'>stl_file</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      <p>the main class for STL file I/O.</p>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n_plates"></span>
+              integer,
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n_plates</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+<p>number of plates</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-chunk_size"></span>
+              integer,
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>chunk_size</strong></td>
+<td> =</td>
+                <td>1000</td>
+            <td>
+<p>expand <code>plates</code> array in chunks of this size</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-plates"></span>
+              type(<a href='../type/plate.html'>plate</a>),
+            </td>
+              <td>private,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>plates</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p>the array of plates</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-write_ascii_stl_file'>write_ascii_stl_file</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-write_binary_stl_file'>write_binary_stl_file</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-read'>read</a></strong> => <a href='/home/runner/work/stl-fortran/stl-fortran/doc/proc/read_binary_stl_file.html'>read_binary_stl_file</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-read_tab_file'>read_tab_file</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-destroy'>destroy</a></strong> => <a href='/home/runner/work/stl-fortran/stl-fortran/doc/proc/destroy_stl_file.html'>destroy_stl_file</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-add_plate'>add_plate</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-add_sphere'>add_sphere</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-add_cylinder'>add_cylinder</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-add_curve'>add_curve</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-add_cone'>add_cone</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-add_arrow'>add_arrow</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-add_axes'>add_axes</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-shift_mesh'>shift_mesh</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/stl_file.html#boundprocedure-set_chunk_size'>set_chunk_size</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, private ::
+  <strong><a href='../type/stl_file.html#boundprocedure-generate_circle'>generate_circle</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, private ::
+  <strong><a href='../type/stl_file.html#boundprocedure-compute_vertex_scale'>compute_vertex_scale</a></strong></td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Functions</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-compute_vertex_scale"></span> <h3>private pure function <a href='../proc/compute_vertex_scale.html'>compute_vertex_scale</a>(me, bounding_box) result(scale)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Compute the scale factor for the vertices (for writing to a file).</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~8"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bounding_box~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>bounding_box</strong></td>
+            <td>
+<p>scale vertices so that model fits in a
+box of this size (if &lt;=0, no scaling is done)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp)</small>
+    </h4>
+    <p>scale factor</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-perpendicular"></span> <h3>private pure function <a href='../proc/perpendicular.html'>perpendicular</a>(v1, v2) result(is_parallel)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Returns true if the two vectors are perpendicular.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v1~8"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>v1</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v2~8"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>v2</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>logical</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-normal"></span> <h3>private pure function <a href='../proc/normal.html'>normal</a>(v1, v2, v3) result(n)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Normal vector for the plate (computed using right hand rule).</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v1~9"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v1</strong></td>
+            <td>
+<p>first vertex of the triangle [x,y,z]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v2~9"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v2</strong></td>
+            <td>
+<p>second vertex of the triangle [x,y,z]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v3~6"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v3</strong></td>
+            <td>
+<p>third vertex of the triangle [x,y,z]</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp), dimension(3)</small>
+    </h4>
+    <p>surface normal vector</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-unit"></span> <h3>private pure function <a href='../proc/unit.html'>unit</a>(r) result(rhat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>3x1 Unit vector.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp), dimension(3)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-cross"></span> <h3>private pure function <a href='../proc/cross.html'>cross</a>(a, b) result(axb)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Vector cross product.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>a</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp), dimension(3)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-spherical_to_cartesian"></span> <h3>private pure function <a href='../proc/spherical_to_cartesian.html'>spherical_to_cartesian</a>(r, alpha, beta) result(rvec)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Convert spherical (r,alpha,beta) to Cartesian (x,y,z).</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+<p>magnitude</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alpha"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>alpha</strong></td>
+            <td>
+<p>right ascension [deg]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-beta"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>beta</strong></td>
+            <td>
+<p>declination [deg]</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp), dimension(3)</small>
+    </h4>
+    <p>[x,y,z] vector</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-axis_angle_rotation"></span> <h3>private pure function <a href='../proc/axis_angle_rotation.html'>axis_angle_rotation</a>(v, k, theta) result(vrot)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Jacob Williams</dd>
+        <dt>Date</dt><dd>7/20/2014</dd>
+    </dl>
+
+  <p>Rotate a 3x1 vector in space, given an axis and angle of rotation.</p><a href="../proc/axis_angle_rotation.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v~5"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v</strong></td>
+            <td>
+<p>vector to rotate</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>k</strong></td>
+            <td>
+<p>rotation axis</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-theta"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>theta</strong></td>
+            <td>
+<p>rotation angle [deg]</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp), dimension(3)</small>
+    </h4>
+    <p>result</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-vector_projection"></span> <h3>private pure function <a href='../proc/vector_projection.html'>vector_projection</a>(a, b) result(c)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>The projection of one vector onto another vector.</p><a href="../proc/vector_projection.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>a</strong></td>
+            <td>
+<p>the original vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(size(a))
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+            <td>
+<p>the vector to project on to</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp), dimension(size(a))</small>
+    </h4>
+    <p>the projection of a onto b</p>
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-vector_projection_on_plane"></span> <h3>private pure function <a href='../proc/vector_projection_on_plane.html'>vector_projection_on_plane</a>(a, b) result(c)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Project a vector onto a plane.</p><a href="../proc/vector_projection_on_plane.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>a</strong></td>
+            <td>
+<p>the original vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+            <td>
+<p>the plane to project on to (a normal vector)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=wp), dimension(3)</small>
+    </h4>
+    <p>the projection of a onto the b plane</p>
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-destroy_stl_file"></span> <h3>private  subroutine <a href='../proc/destroy_stl_file.html'>destroy_stl_file</a>(me)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Destroy an <code>stl_file</code>.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-set_chunk_size"></span> <h3>private  subroutine <a href='../proc/set_chunk_size.html'>set_chunk_size</a>(me, chunk_size)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Set the chunk size in the class.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~2"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-chunk_size~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>chunk_size</strong></td>
+            <td>
+<p>must be &gt;0</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-add_plate"></span> <h3>private  subroutine <a href='../proc/add_plate.html'>add_plate</a>(me, v1, v2, v3)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Add a plate to the class.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~3"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v1~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v1</strong></td>
+            <td>
+<p>first vertex</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v2~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v2</strong></td>
+            <td>
+<p>second vertex</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v3~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v3</strong></td>
+            <td>
+<p>third vertex</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-write_binary_stl_file"></span> <h3>private  subroutine <a href='../proc/write_binary_stl_file.html'>write_binary_stl_file</a>(me, filename, istat, bounding_box)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Generate a binary STL file.</p><a href="../proc/write_binary_stl_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~4"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-filename"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>filename</strong></td>
+            <td>
+<p>STL file name</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istat"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>istat</strong></td>
+            <td>
+<p><code>iostat</code> code (=0 if no errors)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bounding_box"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>bounding_box</strong></td>
+            <td>
+<p>scale vertices so that model fits in a
+box of this size (if &lt;=0, no scaling is done)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-read_binary_stl_file"></span> <h3>private  subroutine <a href='../proc/read_binary_stl_file.html'>read_binary_stl_file</a>(me, filename, istat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Read a binary STL file.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~5"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-filename~2"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>filename</strong></td>
+            <td>
+<p>STL file name</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istat~2"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>istat</strong></td>
+            <td>
+<p><code>iostat</code> code (=0 if no errors)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-read_tab_file"></span> <h3>private  subroutine <a href='../proc/read_tab_file.html'>read_tab_file</a>(me, filename, istat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Read a text vertex-facet file.</p><a href="../proc/read_tab_file.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~6"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-filename~3"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>filename</strong></td>
+            <td>
+<p>Vertex-facet file name</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istat~3"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>istat</strong></td>
+            <td>
+<p><code>iostat</code> code (=0 if no errors)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-write_ascii_stl_file"></span> <h3>private  subroutine <a href='../proc/write_ascii_stl_file.html'>write_ascii_stl_file</a>(me, filename, modelname, istat, bounding_box)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Generate an ascii STL file.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~7"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-filename~4"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>filename</strong></td>
+            <td>
+<p>STL file name</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-modelname"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>modelname</strong></td>
+            <td>
+<p>the solid name (should not contain spaces)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-istat~4"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>istat</strong></td>
+            <td>
+<p><code>iostat</code> code (=0 if no errors)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bounding_box~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>bounding_box</strong></td>
+            <td>
+<p>scale vertices so that model fits in a
+box of this size (if &lt;=0, no scaling is done)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-shift_mesh"></span> <h3>private  subroutine <a href='../proc/shift_mesh.html'>shift_mesh</a>(me)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Shift the vertex coordinates so that there are no non-positive components.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~9"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-add_sphere"></span> <h3>private  subroutine <a href='../proc/add_sphere.html'>add_sphere</a>(me, center, radius, num_lat_points, num_lon_points)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Add a sphere to an STL file.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~10"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-center"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>center</strong></td>
+            <td>
+<p>coordinates of sphere center [x,y,z]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-radius"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>radius</strong></td>
+            <td>
+<p>radius of the sphere</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_lat_points"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_lat_points</strong></td>
+            <td>
+<p>number of latitude points (not counting poles)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_lon_points"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_lon_points</strong></td>
+            <td>
+<p>number of longitude points</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-add_cylinder"></span> <h3>private  subroutine <a href='../proc/add_cylinder.html'>add_cylinder</a>(me, v1, v2, radius, num_points, initial_cap, final_cap, initial_normal, final_normal, final_normal_used, initial_vector, final_initial_vector_used)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Add a cylinder to an STL file.</p><a href="../proc/add_cylinder.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~11"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v1~6"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v1</strong></td>
+            <td>
+<p>coordinates of initial point</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v2~6"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v2</strong></td>
+            <td>
+<p>coordinates of final point</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-radius~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>radius</strong></td>
+            <td>
+<p>radius of the cylinder</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_points"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_points</strong></td>
+            <td>
+<p>number of point on the circle (&gt;=3)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-initial_cap"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>initial_cap</strong></td>
+            <td>
+<p>add a cap plate to the initial point</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-final_cap"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>final_cap</strong></td>
+            <td>
+<p>add a cap plate to the final point</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-initial_normal"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>initial_normal</strong></td>
+            <td>
+<p>outward normal vector for initial circle</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-final_normal"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>final_normal</strong></td>
+            <td>
+<p>outward normal vector for final circle</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-final_normal_used"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>final_normal_used</strong></td>
+            <td>
+<p>outward normal vector for final circle
+actually used</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-initial_vector"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>initial_vector</strong></td>
+            <td>
+<p>vector to use to generate the initial
+circle (x_unit by default)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-final_initial_vector_used"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>final_initial_vector_used</strong></td>
+            <td>
+<p>the initial vector used for the final
+cap to generate the points</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-add_cone"></span> <h3>private  subroutine <a href='../proc/add_cone.html'>add_cone</a>(me, v1, v2, radius, num_points, initial_cap, initial_normal)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Add a cone to an STL file.</p><a href="../proc/add_cone.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~12"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v1~7"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v1</strong></td>
+            <td>
+<p>coordinates of initial point (bottom of the cone)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v2~7"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v2</strong></td>
+            <td>
+<p>coordinates of final point (point of the cone)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-radius~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>radius</strong></td>
+            <td>
+<p>radius of the cone (the bottom plate)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_points~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_points</strong></td>
+            <td>
+<p>number of point on the circle (&gt;=3)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-initial_cap~2"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>initial_cap</strong></td>
+            <td>
+<p>add a cap plate to the initial point (bottom)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-initial_normal~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>initial_normal</strong></td>
+            <td>
+<p>outward normal vector for initial plate (bottom)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-add_axes"></span> <h3>private  subroutine <a href='../proc/add_axes.html'>add_axes</a>(me, origin, vx, vy, vz, radius, num_points, arrowhead_radius_factor, arrowhead_length_factor)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Add x,y,z axes to an STL file.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~13"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-origin"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>origin</strong></td>
+            <td>
+<p>coordinates of the origin of the axes</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vx"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>vx</strong></td>
+            <td>
+<p>x axis vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vy"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>vy</strong></td>
+            <td>
+<p>y axis vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vz"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>vz</strong></td>
+            <td>
+<p>z axis vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-radius~4"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>radius</strong></td>
+            <td>
+<p>radius of the cylinder</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_points~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_points</strong></td>
+            <td>
+<p>number of point on the circle (&gt;=3)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrowhead_radius_factor"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrowhead_radius_factor</strong></td>
+            <td>
+<p>arrowhead cone radius factor
+(multiple of cylinder radius)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrowhead_length_factor"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrowhead_length_factor</strong></td>
+            <td>
+<p>arrowhead tip length factor
+(multiple of vector length)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-add_arrow"></span> <h3>private  subroutine <a href='../proc/add_arrow.html'>add_arrow</a>(me, origin, v, radius, num_points, arrowhead_radius_factor, arrowhead_length_factor)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Add an arrow to an STL file.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~14"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-origin~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>origin</strong></td>
+            <td>
+<p>coordinates of the origin of the axes</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>v</strong></td>
+            <td>
+<p>vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-radius~5"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>radius</strong></td>
+            <td>
+<p>radius of the cylinder</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_points~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_points</strong></td>
+            <td>
+<p>number of point on the circle (&gt;=3)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrowhead_radius_factor~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrowhead_radius_factor</strong></td>
+            <td>
+<p>arrowhead cone radius factor
+(multiple of cylinder radius)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-arrowhead_length_factor~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>arrowhead_length_factor</strong></td>
+            <td>
+<p>arrowhead tip length factor
+(multiple of vector length)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-generate_circle"></span> <h3>private  subroutine <a href='../proc/generate_circle.html'>generate_circle</a>(me, c, radius, n, nc, add_circle, circle, initial_vector, cw)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Generate the points in a circle, and optionally add it as a plate.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~15"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>c</strong></td>
+            <td>
+<p>center of the circle</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-radius~6"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>radius</strong></td>
+            <td>
+<p>radius of the cylinder</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~4"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+<p>normal vector to the circle</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nc~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nc</strong></td>
+            <td>
+<p>number of points on the circle
+(must be at least 3)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-add_circle"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>add_circle</strong></td>
+            <td>
+<p>to also add to the circle as a plate</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-circle"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(:,:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>circle</strong></td>
+            <td>
+<p>points on the circle</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-initial_vector~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>initial_vector</strong></td>
+            <td>
+<p>vector to use to generate the initial
+circle (x_unit by default)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cw"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cw</strong></td>
+            <td>
+<p>generate the points in the clockwise
+direction abound n (default is false)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-add_curve"></span> <h3>private  subroutine <a href='../proc/add_curve.html'>add_curve</a>(me, x, y, z, radius, num_points, initial_cap, initial_normal, final_cap, final_normal, initial_vector)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Add a curve to an STL file.</p><a href="../proc/add_curve.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~16"></span>
+              class(<a href='../type/stl_file.html'>stl_file</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+            <td>
+<p>x coordinate array</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+            <td>
+<p>y coordinate array</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~4"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>z</strong></td>
+            <td>
+<p>z coordinate array</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-radius~7"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>radius</strong></td>
+            <td>
+<p>radius of the cylinder</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_points~5"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_points</strong></td>
+            <td>
+<p>number of point on the cylinder perimeter</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-initial_cap~3"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>initial_cap</strong></td>
+            <td>
+<p>add a cap plate to the initial point</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-initial_normal~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>initial_normal</strong></td>
+            <td>
+<p>outward normal vector for initial circle</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-final_cap~2"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>final_cap</strong></td>
+            <td>
+<p>add a cap plate to the final point</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-final_normal~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>final_normal</strong></td>
+            <td>
+<p>outward normal vector for final circle</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-initial_vector~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td>optional,</td>            <td>
+              dimension(3)
+            </td>
+            <td>::</td>
+            <td><strong>initial_vector</strong></td>
+            <td>
+<p>vector to use to generate the first circle (x_unit by default)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-6"><p>stl-fortran was developed by Jacob Williams<br>&copy; 2022 
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              stl-fortran
+ was developed by Jacob Williams<br>              &copy; 2025 
 </p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-6">
-          <p class="text-right">
-            Documentation generated by 
-            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-          </p>
-        </div>
-      </div>
-      <br>
-      </div> <!-- /container -->    
+        <br>
+      </div> <!-- /container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
+    <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
-<!--
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 
     <!-- MathJax JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-      });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
   </body>
 </html>
